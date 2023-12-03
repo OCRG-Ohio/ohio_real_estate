@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   //@ts-ignore
   import PlainText from '$lib/components/PlainText.svelte';
   import RichText from '$lib/components/RichText.svelte';
