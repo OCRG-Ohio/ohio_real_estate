@@ -22,7 +22,7 @@ body{font-family:var(--font-default); color:var(--color-default); overflow-x:hid
 h1, h2, h3{
   font-family:var(--font-heading);
 }
- 
+
 .sticky {
   position: fixed;
   width:100%;
@@ -166,7 +166,14 @@ section{padding:0 0; overflow:hidden;}
 .navsmaller{background:#ffffff;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;}
 .navsmaller .logo{color:var(--myBlue);}
 .navsmaller .navLi{color:var(--myBlue);font-weight: 300;}
-.navsmaller button{color:var(--myBlue);}
+.navsmaller .dashBtn{
+  color: var(--myBlue);
+  border: 1px solid var(--myBlue);
+}
+.navsmaller .dashBtn > svg{
+  color: var(--myBlue);
+  
+}
 .navsmaller .tBtn2{color:var(--myBlue); border:1px solid var(--myBlue);}
 .navsmaller .tBtn2:hover{color:#ffffff;}
 
@@ -617,3 +624,6 @@ swiper-slide{
   opacity:0.5;
 }
 
+
+
+/* Media Querries */

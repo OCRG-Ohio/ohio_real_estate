@@ -252,7 +252,7 @@ swiperEl.initialize();
 <div class="container-fluid heroSection p-0 flex items-center" style="background: url({bannerImage}) top center no-repeat; background-size: cover;background-attachment: fixed;">
   <div class="container mx-auto">
   <div class="heroText relative mt-10 flex flex-col items-start">
-  <h2 class="max-w-xl">
+  <h2 class="md:max-w-xl">
    <PlainText bind:content={title} />
    </h2>
     <p>Ohio Concierge Realty Group</p>
@@ -435,7 +435,7 @@ swiperEl.initialize();
   <section class="services bg-primary-50">
     <div class="container mx-auto" data-aos="fade-up">
 
-      <div class="grid grid-cols-3 gap-10 pb-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-4">
      
         <div class="rounded-lg shadow p-6 relative isolate border border-gray-200" style="background: url({box1}) top right no-repeat; background-size: contain;">
           <ZoomInOutline class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" strokeWidth="1"/>

@@ -100,8 +100,8 @@ gsap.registerPlugin(ScrollTrigger);
          
         </NavUl>
         {#if $currentUser}
-        <Button class="">Dashboard<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white bg-primary-700" /></Button>
-        <Dropdown>
+        <Button class="dashBtn">Dashboard<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white bg-primary-700" /></Button>
+        <Dropdown class="p-4">
           <DropdownItem href="/account">Settings</DropdownItem>
           <DropdownItem>
             <button on:click={() => (showUserMenu = !showUserMenu)}>
