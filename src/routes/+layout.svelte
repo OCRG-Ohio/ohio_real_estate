@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<title>Contactly</title>
+	<title>Ohio Concierge Realty Group</title>
 </svelte:head>
 <Toaster></Toaster>
 <div class="overflow-x-hidden data-scroll-container">	

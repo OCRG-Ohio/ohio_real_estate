@@ -91,13 +91,11 @@
 </WebsiteHeader>
 
 <div class="container-fluid heroSection p-0 flex items-center h-[50vh] md:h-screen" style="background: url({ohio_1}) top center no-repeat; background-size: cover;background-attachment: fixed;">
-    <div class="container mx-auto">
-    <div class="heroText relative mt-10 flex flex-col items-start">
-    <h2 class="md:max-w-4xl">
+    <div class="container mx-auto grid grid-cols-2">
+    <div class="heroText relative mt-10 flex flex-col items-start col-span-2 lg:col-span-1">
+    <h2 class="">
      <PlainText bind:content={title} />
-     </h2>
-    
-      
+     </h2>       
       
     </div>
     
