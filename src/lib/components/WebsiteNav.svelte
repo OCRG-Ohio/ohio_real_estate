@@ -86,7 +86,7 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
 
     <NotEditable>
-      <Navbar  class="fixed z-10 bg-transparent mainNav">
+      <Navbar  class="fixed z-20 bg-transparent mainNav">
         <NavBrand href="/">
           <!-- <img src={siteLogo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
           <span class="logo self-center whitespace-nowrap text-xl font-semibold text-white">DI LUSSO</span>

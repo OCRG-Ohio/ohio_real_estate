@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Card, Button } from "flowbite-svelte";
+		import { Card,Button,Label, Input } from "flowbite-svelte";
+
 	import { superForm } from "sveltekit-superforms/client";
 	import type { PageData } from "./$types";
 
@@ -16,16 +17,16 @@
 		<Card class="mt-6 w-full" padding="xl" size="md">
 			<!-- Login Form -->
 			<form method="POST" class="flex flex-col space-y-6" use:enhance data-testid="login-form">
-				<label class="space-y-2" for="email">
+				<Label class="space-y-2" for="email">
 					<span>Email</span>
-					<input type="email" name="email" bind:value={$form.email} data-testid="email" />
+					<Input type="email" name="email" bind:value={$form.email} data-testid="email" />
 					{#if $errors.email}
 						<span class="block text-red-600 dark:text-red-500">{$errors.email}</span>
 					{/if}
-				</label>
-				<label class="space-y-2" for="password">
+				</Label>
+				<Label class="space-y-2" for="password">
 					<span>Password</span>
-					<input
+					<Input
 						type="password"
 						name="password"
 						bind:value={$form.password}
@@ -33,7 +34,7 @@
 					{#if $errors.password}
 						<span class="block text-red-600 dark:text-red-500">{$errors.password}</span>
 					{/if}
-				</label>
+				</Label>
 				<Button type="submit" class="w-full bg-myBlue">Login</Button>
 				<div class="text-sm font-medium text-gray-500 dark:text-gray-300">
 					Don't have an account? <a

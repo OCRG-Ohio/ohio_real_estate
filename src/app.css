@@ -11,12 +11,12 @@
 
 @font-face{font-family:'Cut'; src:url('./../fonts/Cut-Bold.woff'),url('./../fonts/Cut-Regular.woff');}
 
-/* Colors */:root{--font-default:'Poppins',sans-serif; --font-heading:'Poppins', sans-serif; --color-default:#364d59; --myBlue:#244DF0; --color-secondary:#52565e;--accent:#f3f4f6;scroll-behavior:smooth;}
+/* Colors */:root{--font-default:'Poppins',sans-serif; --font-heading:'Poppins', sans-serif;  --myBlue:#244DF0; --accent:#f8f8f8;scroll-behavior:smooth;}
 /* Smooth scroll behavior */
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body{font-family:var(--font-default); color:var(--color-default); overflow-x:hidden;box-sizing:border-box;font-size:18px; line-height:28px; font-weight:300;}
+body{font-family:var(--font-default); color:var(--color-default); overflow-x:hidden;box-sizing:border-box;font-size:18px; line-height:28px; font-weight:300;scroll-behavior:smooth;}
 .bg-white{--bs-bg-opacity:0;}
 
 h1, h2, h3{
@@ -129,7 +129,7 @@ h1, h2, h3{
 .btnPrimary:hover span:after{width:0;}
 a{color:var(--myBlue); text-decoration:none;}
 a:hover{text-decoration:none;}
-h1,h2,h3{font-family:var(--font-heading);}
+h1,h2,h3{font-family:var(--font-heading);line-height: 1.3;}
 
 .small-title {
 	text-transform: capitalize;
@@ -279,17 +279,15 @@ footer .logo *{color:#ffffff;}
 .aboutUs .flexItem2{width:58%; display:flex; justify-content:center; align-items:center;}
 .aboutUs .flexItem2 span{padding-top:45px; display:block; font-size:500px; line-height:1; color:white; font-family:"Cut"; font-weight:normal; font-style:normal; text-shadow:#E8E9EC 1px 1px,#E8E9EC -1px 1px,#E8E9EC -1px -1px,#E8E9EC 1px -1px;}
 .aboutUs .aboutText{}
-.aboutUs .aboutText h2{text-transform: capitalize;
+.aboutText h2{text-transform: capitalize;
 	font-weight: 200;
 	font-size: 39px;
 	letter-spacing: 2px;
 	padding-bottom: 30px;
 	color: #244DF0;}
 
-.aboutPage{background-color:var(--myBlue); color:white;}
-.aboutPage .aboutUsText{padding:175px 0; position:relative;}
-.aboutPage .aboutUsText:before{position:absolute; content:'T'; right:0; bottom:-60%; display:block; font-size:650px; color:#1A213D; font-family:"Cut"; font-weight:normal; font-style:normal; text-shadow:#E8E9EC 1px 1px,#E8E9EC -1px 1px,#E8E9EC -1px -1px,#E8E9EC 1px -1px; line-height:1; opacity:0.125; z-index:0;}
-.aboutPage .aboutUsText h2{text-transform:uppercase; font-weight:600; font-size:14px; letter-spacing:2px; padding-bottom:30px;}
+.aboutPage{}
+.aboutPage .aboutUsText{position:relative;}
 .aboutPage .aboutUsText h3{padding-bottom:50px; font-size:36px; font-weight:100;}
 .aboutPage .aboutUsText p{font-size:15px; font-weight:300; line-height:34px; letter-spacing:0.5px; width:561px;}
 .aboutPage .teamSec{display:flex; flex-wrap:wrap;}
@@ -300,8 +298,7 @@ footer .logo *{color:#ffffff;}
 .aboutPage .teamSec .flexItem .teamText h3{font-weight:600; font-size:16px; letter-spacing:1px; padding-bottom:10px; margin:0;}
 .aboutPage .teamSec .flexItem .teamText p{margin:0; text-transform:uppercase; font-weight:300; font-size:12px; letter-spacing:2px;}
 .aboutPage .teamSec .flexItem .flexText{top:31px; left:31px; right:31px; bottom:31px; position:absolute; display:flex; flex-wrap:wrap; justify-content:space-between; flex-direction:column;}
-.aboutPage .teamSec .flexItem .flexText p{font-weight:300; font-size:24px; line-height:45px; color:#1A213D; margin:0;}
-.aboutPage .teamSec .flexItem.bg-gray{background-color:#E6E8EC;}
+.aboutPage .teamSec .flexItem.bg-gray{background-color:#f8f8f8;}
 .aboutPage .teamSec .flexItem.bg-gray::before{display:none;}
 .aboutPage .aboutBottomSec{padding:90px 0 70px;}
 .aboutPage .aboutBottomSec .flexItem1{width:40%; display:flex; flex-wrap:wrap; justify-content:flex-end;}
@@ -335,12 +332,14 @@ footer .logo *{color:#ffffff;}
 # Call to action
 --------------------------------------------------------------*/
 .callToAction{ position:relative;}
+.callToAction:after{position:absolute;content:''; inset:0; width:100%; height:100%; background:#000000;opacity:.3; z-index:0;}
+
 .callToAction .ukiyo-wrapper .imageParallex,.callToAction .imageParallex{height:100% !important; width:100% !important;}
 .callToAction .ctaText {
 	position: absolute;
 	top: 50%;
 	right: 10%;
-	background: #ffffff;
+	background: var(--accent);
 	padding: 40px;
 	transform: translate(0,-50%);
 	width: 400px;
@@ -352,8 +351,24 @@ footer .logo *{color:#ffffff;}
 	font-weight: 200;
 	margin: 0;
 	line-height: 40px;
+  
+ 
 }
 .callToAction .ctaText p{padding:35px 0 55px; color:#6A6F81; letter-spacing:0.5px;}
+
+.aboutCta.callToAction .ctaText {
+	position: relative;
+	padding: 40px;
+	transform: initial;
+	width: 400px;
+	z-index: 2;
+	border-radius: 10px;
+  top: initial;
+	right: initial;
+
+} 
+.aboutCta .aboutText h2,.aboutCta .aboutText p {
+  color:#ffffff;}
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
@@ -474,13 +489,10 @@ footer .logo *{color:#ffffff;}
   0%{transform:rotate(0deg);}
   100%{transform:rotate(360deg);}
 }
-.heroSection{position:relative; margin-top:0; height: 100vh ;}
-.heroSection:after{position:absolute;content:''; inset:0; width:100%; height:100%; background:#000000;opacity:.3; }
+.heroSection{position:relative; margin-top:0;  z-index:1;}
+.heroSection:after{position:absolute;content:''; inset:0; width:100%; height:100%; background:#000000;opacity:.5; z-index:-1;}
 
-.heroSection .d-flex{flex-wrap:wrap; height:100vh;}
-.heroSection .d-flex .flexItem1{width:42%;}
-.heroSection .d-flex .ukiyo-wrapper{width:100% !important;}
-.heroSection .d-flex .ukiyo-wrapper .imageParallex{width:100% !important;}
+
 .heroSection .heroText{z-index:2;}
 .heroSection .heroText h2{font-size:64px; line-height:70px; font-weight:200; color:#ffffff;}
 .heroSection .heroText p{width:290px; font-size:20px; line-height:36px; font-weight:200; padding:10px 0 40px; color:#ffffff;}
@@ -574,7 +586,7 @@ footer .footer-legal ul li img{width:60px; filter:invert(1);}
 	left: 15px;
 	
 }
-.listingsSec .listingContent{  text-align:left;  position:relative;padding:1rem; background:var(--accent);}
+.listingsSec .listingContent{  text-align:left;  position:relative;padding:1rem; background:#ffffff;}
 .listingsSec .listingContent .price{font-size:20px; line-height:26px;  letter-spacing:0.33;color:theme(colors.myBlue);}
 .listingsSec .listingContent p{margin:0; font-weight:400; font-size:14px; line-height:16px; margin:12px 0 0 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .listingsSec .listingContent .listingInfo{font-size:14px; font-weight:normal; display:flex; gap:6px; margin-top:4px;}
