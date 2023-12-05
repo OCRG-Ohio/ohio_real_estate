@@ -91,15 +91,8 @@ gsap.registerPlugin(ScrollTrigger);
           <!-- <img src={siteLogo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
           <span class="logo self-center whitespace-nowrap text-xl font-semibold text-white">DI LUSSO</span>
         </NavBrand>
-        <NavHamburger  />
-        <NavUl >
-          {#each navigation as nav }
-          <NavLi href={nav.href} class="text-white navLi">{nav.label}</NavLi>
-          {/each}
-          
-         
-        </NavUl>
-        {#if $currentUser}
+        <div class="flex md:order-2">
+          {#if $currentUser}
         <Button class="dashBtn">Dashboard<ChevronDownSolid class="w-3 h-3 ml-2 text-white dark:text-white bg-primary-700" /></Button>
         <Dropdown class="p-4">
           <DropdownItem href="/account">Settings</DropdownItem>
@@ -117,6 +110,17 @@ gsap.registerPlugin(ScrollTrigger);
           Contact 
         </a>
       {/if}
+          <NavHamburger />
+        </div>
+      
+        <NavUl class="order-1">
+          {#each navigation as nav }
+          <NavLi href={nav.href} class="text-white navLi">{nav.label}</NavLi>
+          {/each}
+          
+         
+        </NavUl>
+        
 
       </Navbar>           
   

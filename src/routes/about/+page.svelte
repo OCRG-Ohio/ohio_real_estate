@@ -111,7 +111,7 @@
        
         <RichText multiLine bind:content={aboutUs} />
         
-      <a href="/about" class="tBtn2 tBtn2Alt md:mt-14">Learn More</a>
+      <a href="/about" class="tBtn2 tBtn2Alt mt-8  md:mt-14">Learn More</a>
       
       </div>
     </div>
@@ -160,7 +160,7 @@
 <div class="container-fluid aboutPage py-16 md:py-24 lg:py-32 2xl:py-36">
 	<div class="container mx-auto">
         <div class="grid grid-cols-4">
-            <div class="aboutText col-span-3 md:col-span-2">
+            <div class="aboutText col-span-4 md:col-span-2">
                 
                 <RichText multiLine bind:content={aboutTeam} />               
                  
@@ -188,7 +188,7 @@
 			<div class="flexText">
 				<p class="text-primary-700">Interested to work in real estate?</p>
 				
-                <a href="/about" class="tBtn2 tBtn2Alt  mt-8 md:mt-14">Apply here</a>
+                <a href="/about" class="tBtn2 tBtn2Alt  mt-8 mt-8  md:mt-14">Apply here</a>
 			</div>
 		</div>
 	</div>	

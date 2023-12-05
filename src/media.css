@@ -21,6 +21,9 @@
 /* Small screens - MOBILE */
 @media (max-width:480px) { 
     .container{padding-inline:1rem;}
+    .heroSection {
+       background-attachment:initial !important;
+    }
     .heroSection .heroText h2 {
         font-size: 40px;
         line-height: 50px;      
@@ -32,10 +35,15 @@
     .small-title {
         text-transform: capitalize;
         font-weight: 200;
-        font-size: 25px;
-        letter-spacing: 2px;
+        font-size: 35px;
+        letter-spacing: 1px;
         padding-bottom: 16px;
         color: #244df0;
+    }
+    .aboutText h2 {
+        text-transform: capitalize;
+        font-weight: 200;
+        font-size: 30px;    
     }
 } /* Define mobile styles - Mobile First */
  

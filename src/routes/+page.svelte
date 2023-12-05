@@ -159,7 +159,7 @@ swiperEl.initialize();
       <h2 class="small-title">We do it smart</h2>
       <RichText multiLine bind:content={aboutUs} />
       
-       <a href="/about" class="tBtn2 tBtn2Alt  mt-8 md:mt-14">Learn More</a>
+       <a href="/about" class="tBtn2 tBtn2Alt  mt-8 mt-8  md:mt-14">Learn More</a>
     
     </div>
   </div>
