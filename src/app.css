@@ -11,7 +11,7 @@
 
 @font-face{font-family:'Cut'; src:url('./../fonts/Cut-Bold.woff'),url('./../fonts/Cut-Regular.woff');}
 
-/* Colors */:root{--font-default:'Poppins',sans-serif; --font-heading:'Poppins', sans-serif;  --myBlue:#244DF0; --accent:#f8f8f8;scroll-behavior:smooth;}
+/* Colors */:root{--font-default:'Poppins',sans-serif; --font-heading:'Poppins', sans-serif;  --myBlue:#244DF0; --accent:#F8F5F3;scroll-behavior:smooth;}
 /* Smooth scroll behavior */
 /*--------------------------------------------------------------
 # General
@@ -23,6 +23,17 @@ h1, h2, h3{
   font-family:var(--font-heading);
 }
 
+h2 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+p{
+  margin-bottom:1rem;
+}
 .sticky {
   position: fixed;
   width:100%;
@@ -298,7 +309,7 @@ footer .logo *{color:#ffffff;}
 .aboutPage .teamSec .flexItem .teamText h3{font-weight:600; font-size:16px; letter-spacing:1px; padding-bottom:10px; margin:0;}
 .aboutPage .teamSec .flexItem .teamText p{margin:0; text-transform:uppercase; font-weight:300; font-size:12px; letter-spacing:2px;}
 .aboutPage .teamSec .flexItem .flexText{top:31px; left:31px; right:31px; bottom:31px; position:absolute; display:flex; flex-wrap:wrap; justify-content:space-between; flex-direction:column;}
-.aboutPage .teamSec .flexItem.bg-gray{background-color:#f8f8f8;}
+.aboutPage .teamSec .flexItem.bg-gray{}
 .aboutPage .teamSec .flexItem.bg-gray::before{display:none;}
 .aboutPage .aboutBottomSec{padding:90px 0 70px;}
 .aboutPage .aboutBottomSec .flexItem1{width:40%; display:flex; flex-wrap:wrap; justify-content:flex-end;}
@@ -554,15 +565,15 @@ footer .footer-legal ul li img{width:60px; filter:invert(1);}
 .conceirageServices .conceirageServicesTab ul li i{font-size:22px; margin-right:5px;}
 /*---------- Properties-------*/
 .propertiesPage .listingsHeading h2{text-transform:none; margin:8px 0 24px; font-size:43px; text-align:center;}
-.propertiesPage form .searchField{padding-right:30px; padding-top:12px; border:none; outline:none; padding:16px 19px; border-bottom:1px solid #E7E7E7; opacity:1; font-size:14px; line-height:16px; font-weight:400; box-shadow:none; background:transparent; width:100%; max-width:100%; transition:0.3s all; position:relative;}
-.propertiesPage form select{background:transparent; position:relative; text-align:left; padding-left:0; color:#848484; text-transform:none; box-shadow:none; height:100%; border:none; outline:none; padding:16px 19px; border-bottom:1px solid #E7E7E7; opacity:1; font-size:14px; line-height:16px; font-weight:400; width:100%; max-width:100%;}
+/* .propertiesPage form .searchField{padding-right:30px; padding-top:12px; border:none; outline:none; padding:16px 19px; border-bottom:1px solid #E7E7E7; opacity:1; font-size:14px; line-height:16px; font-weight:400; box-shadow:none; background:transparent; width:100%; max-width:100%; transition:0.3s all; position:relative;}
+.propertiesPage form select{background:transparent; position:relative; text-align:left; padding-left:0; color:#848484; text-transform:none; box-shadow:none; height:100%; border:none; outline:none; padding:16px 19px; border-bottom:1px solid #E7E7E7; opacity:1; font-size:14px; line-height:16px; font-weight:400; width:100%; max-width:100%;} */
 .propertiesPage .slidecontainer{width:100%;}
 .propertiesPage .slider{-webkit-appearance:none; appearance:none; width:100%; height:3px; border-radius:5px; background:#d3d3d3; outline:none; opacity:0.7; -webkit-transition:.2s; transition:opacity .2s;}
 .propertiesPage .slider:hover{opacity:1;}
 .propertiesPage .slider::-webkit-slider-thumb{-webkit-appearance:none; appearance:none; width:25px; height:25px; border-radius:50%; background:var(--myBlue); cursor:pointer;}
 .propertiesPage .slider::-moz-range-thumb{width:25px; height:25px; border-radius:50%; background:var(--myBlue); cursor:pointer;}
 .propertiesPage .slidecontainer{margin-top:32px;}
-.propertiesPage .slidecontainer h1{font-weight:600; line-height:16px; font-size:16px; text-transform:uppercase;}
+.propertiesPage .slidecontainer h1{font-weight:600; line-height:16px; font-size:16px; text-transform:uppercase; color: var(--myBlue);}
 .listingsSec{}
 .listingsSec .d-flex{gap:15px; flex-wrap:wrap;}
 .listingsSec .d-flex .flexItem{width:calc(33.33% - 10px);}
@@ -591,6 +602,29 @@ footer .footer-legal ul li img{width:60px; filter:invert(1);}
 .listingsSec .listingContent p{margin:0; font-weight:400; font-size:14px; line-height:16px; margin:12px 0 0 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .listingsSec .listingContent .listingInfo{font-size:14px; font-weight:normal; display:flex; gap:6px; margin-top:4px;}
 .listingsSec .listingContent .listingInfo span{display:block; line-height:1.4; text-transform:uppercase;}
+.propertiesPage .listingsHeading {
+  text-transform: none;
+  margin: 0 0 45px;
+  font-size: 43px;
+  color: var(--myBlue);
+}
+.propertiesPage form .searchField {
+  padding-right: 30px;
+  padding-top: 12px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #E7E7E7;
+  opacity: 1;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  box-shadow: none;
+  background: transparent;
+  max-width: 100%;
+  transition: 0.3s all;
+}
+
+
 .swiper {
   overflow-y: visible !important;
 }
@@ -639,3 +673,7 @@ swiper-slide{
 
 
 /* Media Querries */
+
+footer {
+  border-top: 1px solid var(--myBlue);
+}

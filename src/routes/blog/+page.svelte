@@ -8,9 +8,22 @@
   import { currentUser } from '$lib/stores.js';
   import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
 	import { onMount } from "svelte";
+  import { Section, BlogBodyWrapper,BlogHead } from 'flowbite-svelte-blocks';
+  import { VideoSolid, ArrowRightOutline, NewspaperSolid } from 'flowbite-svelte-icons';
+  import { writable } from 'svelte/store';
+
+export const blogPosts = writable([]);
+
   export let data;
   let showUserMenu;
 
+  onMount(async () => {   // Fetch your blog posts from the server
+   
+    
+    // Update the store with the fetched posts
+   blogPosts.set(data.articles);
+   localStorage.setItem('blogPosts', JSON.stringify(data.articles));
+  });
 
 </script>
 
@@ -25,21 +38,22 @@
   </div>
 </WebsiteHeader>
 
-
-
-<div class="pb-8">
-  <div class="max-w-screen-md mx-auto px-6 pt-12 sm:pt-24">
-    <div class="font-bold text-sm">LATEST ARTICLES</div>
-    {#if data.articles.length === 0}
-      <div class="md:text-xl py-4">No blog posts have been published so far.</div>
-    {/if}
-  </div>
-
-  {#each data.articles as article, i}
+<Section name="blog" sectionClass="mt-20 md:mt-24 lg:mt-30">
+  <BlogHead>
+    <svelte:fragment slot="h2">Our Blog</svelte:fragment>
+    <svelte:fragment slot="paragraph">
+      <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions and connect with the needs of your audience early and often.</p>
+    </svelte:fragment>
+  </BlogHead>
+  <BlogBodyWrapper divClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {#each data.articles as article, i}
     <ArticleTeaser {article} firstEntry={i === 0} />
-  {/each}
-</div>
+    {/each}
+ 
+  </BlogBodyWrapper>
+</Section>
 
-<EditableWebsiteTeaser />
 
-<Footer counter="/blog" />
+
+
+

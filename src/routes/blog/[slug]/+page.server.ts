@@ -4,9 +4,9 @@ export async function load({ params, locals }) {
 
   const data = await getArticleBySlug(params.slug);
   const nextArticle = await getNextArticle(params.slug);
-  const articles = nextArticle ? [nextArticle] : [];
+  const nextArticles = nextArticle ? [nextArticle] : [];
   return {
     ...data,
-    articles
+    nextArticles
   };
 }

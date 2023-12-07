@@ -65,8 +65,8 @@ export function debounce(node, params) {
 
 export function extractTeaser(body) {
   const teaser = [...body.querySelectorAll('p')].map(n => n.textContent).join(' ');
-  if (teaser.length > 512) {
-    return teaser.slice(0, 512).concat('…');
+  if (teaser.length > 100) {
+    return teaser.slice(0, 100).concat('…');
   } else {
     return teaser;
   }

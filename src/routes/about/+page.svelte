@@ -184,7 +184,7 @@
 				<p>Vestibulum</p>
 			</div>
 		</div>
-		<div class="flexItem bg-gray">
+		<div class="flexItem bg-accent">
 			<div class="flexText">
 				<p class="text-primary-700">Interested to work in real estate?</p>
 				

@@ -14,7 +14,7 @@
   import { currentUser, isEditing } from '$lib/stores';
 
   export let data;
-
+console.log(data.nextArticles)
   let showUserMenu = false;
   let title, teaser, content, published_at, updatedAt;
 
@@ -70,6 +70,7 @@
       );
     }
   }
+
 </script>
 
 <svelte:head>
@@ -93,21 +94,19 @@
 
 <Article bind:title bind:content bind:published_at />
 
-{#if data.articles.length > 0}
+{#if data.nextArticles.length > 0}
   <NotEditable>
     <div class="border-t-2 border-gray-100">
       <div class="max-w-screen-md mx-auto px-6 pt-8 sm:pt-12">
         <div class="font-bold text-sm">READ NEXT</div>
-      </div>
-      {#each data.articles as article, i}
-        <ArticleTeaser {article} firstEntry={i === 0} />
+      </div>     
+    </div>
+    <div class="grid grid-col-2">
+      {#each data.nextArticles as article, i}
+      <ArticleTeaser {article} firstEntry={i === 0} />
       {/each}
     </div>
   </NotEditable>
 {/if}
 
-<NotEditable>
-  <EditableWebsiteTeaser />
-</NotEditable>
 
-<Footer counter={`/blog/${data.slug}`} />

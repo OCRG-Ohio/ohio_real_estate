@@ -140,7 +140,7 @@ export async function getNextArticle(slug) {
     LIMIT 1;
   `;
 
-  return result[0];
+return result.slice(0, 3);
 }
 
 
