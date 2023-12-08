@@ -5,13 +5,22 @@
    768-480     - tablet 
    480-less    - phone landscape & smaller
 --------------------------------------------*/
-@media all and (min-width: 1024px) and (max-width: 1280px) { }
- 
-@media all and (min-width: 768px) and (max-width: 1024px) { }
- 
-@media all and (min-width: 480px) and (max-width: 768px) { }
- 
-@media all and (max-width: 480px) { }
+/* Small Devices (sm) - 640px and up */
+@media (min-width: 640px) { 
+
+}
+
+/* Medium Devices (md) - 768px and up */
+@media (min-width: 768px) {  }
+
+/* Large Devices (lg) - 1024px and up */
+@media (min-width: 1024px) {  }
+
+/* Extra Large Devices (xl) - 1280px and up */
+@media (min-width: 1280px) {  }
+
+/* 2 Extra Large Devices (2xl) - 1536px and up */
+@media (min-width: 1536px) {}
  
 /*------------------------------------------
   Foundation Media Queries 
@@ -19,32 +28,10 @@
 --------------------------------------------*/
  
 /* Small screens - MOBILE */
-@media (max-width:480px) { 
-    .container{padding-inline:1rem;}
-    .heroSection {
-       background-attachment:initial !important;
-    }
-    .heroSection .heroText h2 {
-        font-size: 40px;
-        line-height: 50px;      
-    }
-    .aboutUs .aboutText h2 {
-        font-size: 25px;
-        padding-bottom: 16px;
-    }
-    .small-title {
-        text-transform: capitalize;
-        font-weight: 200;
-        font-size: 35px;
-        letter-spacing: 1px;
-        padding-bottom: 16px;
-        color: #244df0;
-    }
-    .aboutText h2 {
-        text-transform: capitalize;
-        font-weight: 200;
-        font-size: 30px;    
-    }
+@media (max-width:639px) { 
+
+
+
 } /* Define mobile styles - Mobile First */
  
 @media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */

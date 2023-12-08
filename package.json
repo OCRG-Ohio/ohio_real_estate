@@ -71,6 +71,7 @@
 		"langchain": "^0.0.180",
 		"lucide-svelte": "^0.294.0",
 		"nanoid": "^4.0.2",
+		"nodemailer": "^6.9.7",
 		"prosemirror-commands": "^1.5.2",
 		"prosemirror-dropcursor": "^1.8.1",
 		"prosemirror-example-setup": "^1.2.2",

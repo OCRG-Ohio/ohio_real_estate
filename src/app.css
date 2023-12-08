@@ -11,26 +11,35 @@
 
 @font-face{font-family:'Cut'; src:url('./../fonts/Cut-Bold.woff'),url('./../fonts/Cut-Regular.woff');}
 
-/* Colors */:root{--font-default:'Poppins',sans-serif; --font-heading:'Poppins', sans-serif;  --myBlue:#244DF0; --accent:#F8F5F3;scroll-behavior:smooth;}
+/* Colors */:root{--font-default:'Poppins',sans-serif; --font-heading:'Poppins', sans-serif;  --myBlue:#1A213D; --accent:#F8F5F3;scroll-behavior:smooth;}
 /* Smooth scroll behavior */
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body{font-family:var(--font-default); color:var(--color-default); overflow-x:hidden;box-sizing:border-box;font-size:18px; line-height:28px; font-weight:300;scroll-behavior:smooth;}
+body{font-family:var(--font-default); color:var(--color-default); overflow-x:hidden;box-sizing:border-box;font-size:16px; line-height:28px; font-weight:300;scroll-behavior:smooth;}
 .bg-white{--bs-bg-opacity:0;}
 
 h1, h2, h3{
   font-family:var(--font-heading);
 }
-
-h2 {
-  font-family: var(--font-heading);
-  line-height: 1.3;
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 12px;
+h1 {
+  font-size: 28px;
+  line-height: 70px;
+  font-weight: 300;
+  color: #000000;
+  margin-bottom: 1rem;
 }
-
+h2 {
+  text-transform: capitalize;
+	font-weight: 300;
+	font-size: 24px;
+	letter-spacing: 2px;
+  margin:0;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 300;
+}
 p{
   margin-bottom:1rem;
 }
@@ -44,7 +53,7 @@ p{
 	color: #ffffff;
 	padding: 12px 44px 12px 16px;
 	border: 1.5px solid #ffffff;
-	border-radius: 50px;
+	border-radius: 4px;
 	position: relative;
 	overflow: hidden;
 	font-size: 16px;
@@ -143,12 +152,11 @@ a:hover{text-decoration:none;}
 h1,h2,h3{font-family:var(--font-heading);line-height: 1.3;}
 
 .small-title {
-	text-transform: capitalize;
-	font-weight: 200;
-	font-size: 39px;
-	letter-spacing: 1px;
-	padding-bottom: 30px;
-	color: #244DF0;
+  text-transform: capitalize;
+	font-weight: 300;
+	font-size: 24px;
+	letter-spacing: 2px;
+  margin-bottom:20px;
 }
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -178,8 +186,8 @@ section{padding:0 0; overflow:hidden;}
 .navsmaller .logo{color:var(--myBlue);}
 .navsmaller .navLi{color:var(--myBlue);font-weight: 300;}
 .navsmaller .dashBtn{
-  color: #ffffff;
-  border: 1px solid var(--myBlue);
+  /* color: #ffffff;
+  border: 1px solid var(--myBlue); */
 }
 .navsmaller .dashBtn > svg{
   color: #ffffff;
@@ -290,25 +298,31 @@ footer .logo *{color:#ffffff;}
 .aboutUs .flexItem2{width:58%; display:flex; justify-content:center; align-items:center;}
 .aboutUs .flexItem2 span{padding-top:45px; display:block; font-size:500px; line-height:1; color:white; font-family:"Cut"; font-weight:normal; font-style:normal; text-shadow:#E8E9EC 1px 1px,#E8E9EC -1px 1px,#E8E9EC -1px -1px,#E8E9EC 1px -1px;}
 .aboutUs .aboutText{}
-.aboutText h2{text-transform: capitalize;
-	font-weight: 200;
-	font-size: 39px;
-	letter-spacing: 2px;
-	padding-bottom: 30px;
-	color: #244DF0;}
+.aboutText h2{
+	padding-bottom: 10px;
+	color: #1A213D;}
 
 .aboutPage{}
 .aboutPage .aboutUsText{position:relative;}
 .aboutPage .aboutUsText h3{padding-bottom:50px; font-size:36px; font-weight:100;}
 .aboutPage .aboutUsText p{font-size:15px; font-weight:300; line-height:34px; letter-spacing:0.5px; width:561px;}
 .aboutPage .teamSec{display:flex; flex-wrap:wrap;}
-.aboutPage .teamSec .flexItem{width:20%; position:relative;}
+.aboutPage .teamSec .flexItem{width:100%;position:relative;}
 .aboutPage .teamSec .flexItem::before{z-index:2; content:''; bottom:0; left:0; right:0; height:80%; background:linear-gradient(to bottom,transparent,#000); position:absolute; opacity:0.5;}
-.aboutPage .teamSec .flexItemLast{width:40%;}
+.aboutPage .teamSec .flexItem:last-child:before{content:none;}
 .aboutPage .teamSec .flexItem .teamText{padding:40px; position:absolute; z-index:3; bottom:0; left:0; right:0;}
 .aboutPage .teamSec .flexItem .teamText h3{font-weight:600; font-size:16px; letter-spacing:1px; padding-bottom:10px; margin:0;}
 .aboutPage .teamSec .flexItem .teamText p{margin:0; text-transform:uppercase; font-weight:300; font-size:12px; letter-spacing:2px;}
-.aboutPage .teamSec .flexItem .flexText{top:31px; left:31px; right:31px; bottom:31px; position:absolute; display:flex; flex-wrap:wrap; justify-content:space-between; flex-direction:column;}
+.aboutPage .teamSec .flexItem .flexText {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  z-index: 2;
+  position: relative;
+}
 .aboutPage .teamSec .flexItem.bg-gray{}
 .aboutPage .teamSec .flexItem.bg-gray::before{display:none;}
 .aboutPage .aboutBottomSec{padding:90px 0 70px;}
@@ -358,10 +372,6 @@ footer .logo *{color:#ffffff;}
 	border-radius: 10px;
 }
 .callToAction .ctaText h2 {
-	font-size: 33px;
-	font-weight: 200;
-	margin: 0;
-	line-height: 40px;
   
  
 }
@@ -501,11 +511,25 @@ footer .logo *{color:#ffffff;}
   100%{transform:rotate(360deg);}
 }
 .heroSection{position:relative; margin-top:0;  z-index:1;}
-.heroSection:after{position:absolute;content:''; inset:0; width:50%; height:100%; background:#000000;opacity:.6; z-index:-1;}
+.heroSection:after {
+  position: absolute;
+  content: '';
+  inset: 0;
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  opacity: 1;
+  z-index: -1;
+}
 
-
+.heroSection .heroThumb {
+    position: absolute;
+    width: 10rem;
+    bottom: -4rem;
+    left: 1rem;
+}
 .heroSection .heroText{z-index:2;}
-.heroSection .heroText h2{font-size:60px; line-height:70px; font-weight:200; color:#ffffff;}
+.heroSection .heroText h1{font-size:50px;font-weight:200; color:#ffffff;}
 .heroSection .heroText p{width:290px; font-size:20px; line-height:36px; font-weight:200; padding:10px 0 40px; color:#ffffff;}
 /*--------------------------------------------------------------
 # Footer
@@ -578,7 +602,7 @@ footer .footer-legal ul li img{width:60px; filter:invert(1);}
 .listingsSec .d-flex{gap:15px; flex-wrap:wrap;}
 .listingsSec .d-flex .flexItem{width:calc(33.33% - 10px);}
 .listingsSec .d-flex .flexItem .listingsImage{position:relative; overflow:hidden;}
-.listingsSec .listingsBox{border-radius:13px; overflow:hidden; /* background:#2b2e3b; */position:relative;margin-bottom:1rem;}
+.listingsSec .listingsBox{border-radius:10px; overflow:hidden; /* background:#2b2e3b; */position:relative;margin-bottom:1rem;}
 .listingsSec .listingType {
 	/* padding: 12px 16px; */
 	display: flex;
@@ -677,3 +701,4 @@ swiper-slide{
 footer {
   border-top: 1px solid var(--myBlue);
 }
+.container{padding-inline:1rem;}

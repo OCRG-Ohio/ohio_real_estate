@@ -50,6 +50,9 @@ dependencies:
   nanoid:
     specifier: ^4.0.2
     version: 4.0.2
+  nodemailer:
+    specifier: ^6.9.7
+    version: 6.9.7
   prosemirror-commands:
     specifier: ^1.5.2
     version: 1.5.2
@@ -3288,6 +3291,11 @@ packages:
 
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
+    dev: false
+
+  /nodemailer@6.9.7:
+    resolution: {integrity: sha512-rUtR77ksqex/eZRLmQ21LKVH5nAAsVicAtAYudK7JgwenEDZ0UIQ1adUGqErz7sMkWYxWTTU1aeP2Jga6WQyJw==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /nopt@5.0.0:

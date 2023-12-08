@@ -1,4 +1,4 @@
-import type { LayoutServerLoad } from "./$types";
+import type { PageServerLoad, Actions } from './$types';
 
 export const load: LayoutServerLoad = async (event) => {
 	return {
@@ -6,5 +6,11 @@ export const load: LayoutServerLoad = async (event) => {
 	
 	};
 };
+
+
+
+
+
+
 
 

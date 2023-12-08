@@ -135,7 +135,7 @@ swiperEl.initialize();
   <LoginMenu />
 </WebsiteHeader>
 
-<div class="container-fluid heroSection p-0 flex items-center h-[50vh] md:h-screen" style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
+<!-- <div class="container-fluid heroSection p-0 flex items-center h-[50vh] md:h-screen" style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
   <div class="container mx-auto">
   <div class="heroText relative mt-10 flex flex-col items-start">
   <h2 class="md:max-w-xl">
@@ -149,9 +149,22 @@ swiperEl.initialize();
   
 </div>
 
-</div>
+</div> -->
 <!-- End Hero Section -->
-
+<div class="container mx-auto">
+	<div class="heroText mt-28 lg:max-w-2xl">
+		<h1 class="">
+			<PlainText bind:content={title} />
+		</h1>
+	</div>
+</div>
+<div
+	class="container-fluid heroSection p-0 flex items-end h-[400px] md:h-[700px]"
+	style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
+	<!-- <div class="heroThumb border-8 border-white shadow-md">
+		<img src={heroThumb} alt="" />
+	</div> -->
+</div>
 
   <div class="container-fluid aboutUs" style="background: url({rendering}) top right no-repeat; background-size: contain;">   
     <div class="container mx-auto grid grid-cols-3 py-12 md:py-20 lg:py-28 2xl:py-32" >   

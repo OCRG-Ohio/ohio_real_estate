@@ -16,9 +16,9 @@ const config = {
 			'bubble-gum': '#ff77e9',
 			'bermuda': '#78dcca',
 			'blueOld' : '#1A213D',
-			'myBlue' : '#244DF0',
+			'myBlue' : '#1A213D',
 			'accent' : '#F8F5F3',
-		  primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a"}
+		  primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1A213D","800":"#1e40af","900":"#1e3a8a"}
 
 		  },
 	  }
