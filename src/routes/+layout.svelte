@@ -2,7 +2,7 @@
 	import "../app.css";
 	import "../media.css";
 	import Footer from '$lib/components/Footer.svelte';
-
+import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit"
 	import { page } from "$app/stores";
 	
 	import type { LayoutData } from "./$types";
