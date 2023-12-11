@@ -123,11 +123,11 @@
 		<h2 class="small-title text-center mb-6">Our core values</h2>
 		<Accordion
 			class="shadow-md"
-			activeClass="text-sm bg-primary-50 text-blue-600 focus:ring-0 text-lg font-light m-0"
+			activeClass="text-sm bg-primary-700 text-white focus:ring-0 text-lg font-light m-0"
 			inactiveClass="font-light bg-white text-lg font-light m-o  hover:bg-white">
 			<AccordionItem open>
 				<span slot="header">Expertise</span>
-				<p class="mb-2 text-grey-500">
+				<p class="mb-2 text-dark">
 					Our team comprises experienced professionals with in-depth knowledge of the commercial,
 					residential, and investment real estate sectors. We stay ahead of market trends, providing
 					our clients with invaluable insights to make informed decisions.
@@ -135,7 +135,7 @@
 			</AccordionItem>
 			<AccordionItem>
 				<span slot="header">Global Reach</span>
-				<p class="mb-2 text-grey-500">
+				<p class="mb-2 text-dark">
 					At Ohio Concierge Realty Group caters to clients both within the country and worldwide.
 					Whether you are a local buyer or seller, a global investor, or a business seeking to buy
 					or sell commercial properties, we have the expertise to guide you.
@@ -143,7 +143,7 @@
 			</AccordionItem>
 			<AccordionItem>
 				<span slot="header">Personalized Service</span>
-				<p class="mb-2 text-grey-500">
+				<p class="mb-2 text-dark">
 					We understand that no two clients are the same. That's why we take the time to understand
 					your unique objectives and tailor our services to meet your needs. Cutting-Edge
 					Technology: Ohio Concierge Realty Group leverages the latest technology and data analytics
@@ -152,7 +152,7 @@
 			</AccordionItem>
 			<AccordionItem>
 				<span slot="header">Our Commitment</span>
-				<p class="mb-2 text-grey-500">
+				<p class="mb-2 text-dark">
 					Our core values of integrity, transparency, professionalism, and a dedication to client
 					success guide everything we do. Whether you're searching for the perfect home, seeking to
 					make a sound investment, or require assistance with commercial real estate, Ohio Concierge

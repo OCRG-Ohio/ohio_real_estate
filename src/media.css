@@ -16,7 +16,7 @@
 /* Medium Devices (md) - 768px and up */
 
 @media (min-width:768px){
-  .propertiesSingle .propertyDetailInfo {padding: 0 30px 0 0;}
+  .propertiesSingle .propertyDetailInfo {padding: 0 0 0 0;}
   .propertiesSingle .propertiesForm h2{font-size: 22px;}
   .conceirageServices .tabUl li{flex-basis:50%;}
   .conceirageServices .tabUl li button{padding:30px 0;}

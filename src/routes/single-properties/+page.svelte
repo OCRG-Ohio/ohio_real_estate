@@ -10,6 +10,14 @@
 	import { currentUser, isEditing } from "$lib/stores.js";
 	import WebsiteHeader from "$lib/components/WebsiteHeader.svelte";
 	import ContactPageForm from "$lib/components/ContactPageForm.svelte";
+	import SwiperComponent from '$lib/components/HomeSwiper.svelte';
+
+let images = [
+  { src:ohio_1, alt: 'Image 1' },
+  { src:ohio_2, alt: 'Image 2' },
+  { src:ohio_1, alt: 'Image 3' },
+  
+];
 
 	export let data;
 	export let form;
@@ -78,23 +86,28 @@
 	<PrimaryButton on:click={toggleEdit}>Edit page</PrimaryButton>
 	<LoginMenu />
 </WebsiteHeader>
-<div class="container-fluid propertiesSingle mt-20 py-20">
+<div class="container-fluid propertiesSingle  py-20">
 	<div class="container mx-auto">
-		<div class="flex flex-wrap">
-			<div class="w-full md:w-3/5 lg:w-3/5">
+		<div class="grid grid-cols-12">
+			<div class="col-span-12">
 				<div class="propertyDetailInfo">
-					<div class="fotorama" data-nav="thumbs" ata-autoplay="true">
+					<!-- <div class="fotorama" data-nav="thumbs" ata-autoplay="true">
 						<a href={ohio_1}><img src={ohio_1} /></a>
 						<a href={ohio_2}><img src={ohio_2} /></a>
 						<a href={white_2}><img src={white_2} /></a>
-					</div>
+					</div> -->
+					<SwiperComponent {images} />
 					<section class="propertyInfo">
 						<div class="title mb-8">
-							<div class="flex flex-col md:flex-wrap md:flex-row md:justify-between">
-								<h3 class="text-xl md:text-2xl font-semibold">Phasellus Suscipit Elementum</h3>
-								<span>$99,999,999</span>
+							<div class="flex flex-col md:flex-wrap md:flex-row md:justify-between lg:items-end">
+								<div class="">
+									<h3 class="text-xl md:text-2xl font-semibold">Phasellus Suscipit Elementum</h3>
+									<div class="address">Nullam 123, NW Drive</div>
+								</div>
+								
+								<span><b>$99,999,999</b></span>
 							</div>
-							<div class="address">Nullam 123, NW Drive</div>
+							
 							<hr class="mt-4" />
 						</div>
 						<div class="propertyText">
@@ -390,7 +403,7 @@
 			</div>
 
 			<!-- Sidebar Column (1/4) -->
-			<div class="w-full md:w-2/5 lg:w-2/5">
+			<div class="col-span-12">
 				<div class="propertiesForm">
 					<div class="contactInfo">
 						<h2>Ohio Conceirage Properties Group</h2>
