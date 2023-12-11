@@ -36,11 +36,12 @@ model Asset {
 }
 
 model Article {
-  article_id  Int      @id @default(autoincrement())
+  article_id  Int      @id @default(autoincrement())  
   slug        String   @unique
   title       String
   teaser      String
   content     String?
+  featuredImage String?
   created_at  DateTime @default(now())
   published_at DateTime?
   updated_at  DateTime?

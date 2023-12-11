@@ -13,7 +13,7 @@
 <WebsiteNav bind:showUserMenu />
 {#if showUserMenu}
   <Modal on:close={() => (showUserMenu = false)}>
-    <div class="w-full flex flex-col space-y-4 p-4 sm:p-6" id="smooth-wrapper">
+    <div class="w-full flex flex-col" id="smooth-wrapper">
       <slot />
     </div>
   </Modal>

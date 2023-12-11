@@ -6,8 +6,8 @@
   import { isEditing, currentUser } from '$lib/stores.js';
   import { page } from '$app/stores';
   $: activeUrl = $page.url.pathname;
-  let activeClass = 'text-white bg-green-700 md:bg-transparent md:text-green-700 md:dark:text-white dark:bg-green-600 md:dark:bg-transparent';
-  let nonActiveClass = 'text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent';
+  let activeClass = 'border-1 font-bold';
+  let nonActiveClass = 'text-gray-800 hover:text-primar-700 ';
 import siteLogo from "$lib/img/delusso.png"
 import { ArrowRightOutline } from 'flowbite-svelte-icons';
 import gsap from 'gsap';
@@ -87,10 +87,10 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
 
     <NotEditable>
-      <Navbar  class="fixed z-20 bg-transparent mainNav shadow flex flex-nowrap">
+      <Navbar  class="fixed z-20 bg-transparent mainNav shadow">
         <NavBrand href="/">
           <!-- <img src={siteLogo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
-          <span class="logo self-center whitespace-nowrap text-xl font-semibold text-white">DI LUSSO</span>
+          <span class="logo self-center whitespace-nowrap text-xl font-semibold">DI LUSSO</span>
         </NavBrand>
         <div class="flex md:order-2 flex-nowrap">
           {#if $currentUser}
@@ -107,20 +107,21 @@ gsap.registerPlugin(ScrollTrigger);
           </form>
         </Dropdown>
       {:else}
-        <a href="/contact" class="tBtn2">
+        <a href="/contact" class="tBtn2 tBtn2Alt ">
           Contact 
         </a>
       {/if}
           <NavHamburger />
         </div>
       
-        <NavUl class="order-1">
-          {#each navigation as nav }
-          <NavLi href={nav.href} class="navLi text-lg font-light">{nav.label}</NavLi>
+        <NavUl {activeUrl} {activeClass} {nonActiveClass} class="order-1">
+          {#each navigation as nav,i}
+          <NavLi href={nav.href} class={activeUrl === nav.href ? 'activeClass' : 'nonActiveClass'}>{nav.label}</NavLi>
           {/each}
           
          
         </NavUl>
+      
         
 
       </Navbar>           

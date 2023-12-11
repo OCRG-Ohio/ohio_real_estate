@@ -37,15 +37,14 @@
     });
 
     await authChangePromise; // Wait for the promise to resolve before continuing
-
-  });
+	});
 </script>
 
 <svelte:head>
 	<title>Ohio Concierge Realty Group</title>
 </svelte:head>
 <Toaster></Toaster>
-<div class="overflow-x-hidden data-scroll-container">	
+<div class="overflow-x-hidden ">	
 			<slot></slot>	
 <Footer></Footer>
 </div>

@@ -27,8 +27,15 @@ function upload(file, path, progressCallback) {
     xhr.send(formData);
   });
 }
+const supabaseStorageURL = "https://yplejatygdmrnsaocsfk.supabase.co/storage/v1/object/public/quill_files/kelli";
 
 export default async function uploadAsset(file, path, onProgress) {
-  await upload(file, path, onProgress);
-  return path;
+  const response = await upload(file, path, onProgress);
+
+  if (response.status !== 200) {
+    throw new Error('Failed to upload image');
+  }
+
+  // Adjust the folder path as needed
+  return `${supabaseStorageURL}/${path}`;
 }

@@ -1,95 +1,81 @@
 /*------------------------------------------
-  Responsive Grid Media Queries - 1280, 1024, 768, 480
+  Responsive Grid Media Queries - 1280,1024,768,480
    1280-1024   - desktop (default grid)
    1024-768    - tablet landscape
    768-480     - tablet 
    480-less    - phone landscape & smaller
 --------------------------------------------*/
+
 /* Small Devices (sm) - 640px and up */
-@media (min-width: 640px) { 
 
+@media (min-width:640px){
+  .aboutPage .teamSec .flexItem{width:40%;}
+  .conceirageServices .tabUl li{flex-basis:50%;}
+  .conceirageServices .tabUl li button{text-align:center;}
 }
-
 /* Medium Devices (md) - 768px and up */
-@media (min-width: 768px) {  }
 
+@media (min-width:768px){
+  .propertiesSingle .propertyDetailInfo {padding: 0 30px 0 0;}
+  .propertiesSingle .propertiesForm h2{font-size: 22px;}
+  .conceirageServices .tabUl li{flex-basis:50%;}
+  .conceirageServices .tabUl li button{padding:30px 0;}
+  .conceirageServices .container div + div{margin-top:0 !important;}
+  .conceirageServices .conceirageServicesTab ul{flex-direction:row;}
+  .conceirageServices .conceirageServicesTab ul li{padding-block:30px; flex-basis:33%; text-align:start;}
+  h1{font-size:33px; margin-bottom:2rem;}
+  h2{font-size:26px;}
+  .small-title{font-size:26px; margin-bottom:26px;}
+  .heroSection:after{width:100px;}
+  .aboutPage .teamSec .flexItem{width:40%;}
+  .aboutPage .teamSec .flexItem.bg-accent{min-height:304px;}
+}
 /* Large Devices (lg) - 1024px and up */
-@media (min-width: 1024px) {  }
 
+@media (min-width:1024px){
+  .propertiesBanner{height:40vh; margin-top:74px;}
+  .conceirageServicesTab ul{justify-content:space-around;}
+  .conceirageServices .conceirageServicesTab ul li{flex-basis:auto}
+  .conceirageServices .tabUl li{flex-basis:auto;}
+  .conceirageServices .conceirageServicesTab ul li{padding-block:20px;}
+  .timeLine .tl::after{left:50%; margin-left:-3px;}
+  .timeLine .tl-left::after{left:initial;}
+  .timeLine .tl-container::after{right:-5.5px;}
+  .timeLine .tl-container{padding:0 40px; position:relative; background-color:inherit; width:50%;}
+  .timeLine .tl-left{left:0;}
+  .timeLine .tl-right{left:50%;}
+  .timeLine .tl-right::after{left:-9.5px;}
+  .timeLine .tl-content{padding:0;}
+  .timeLine .tl-content h2{font-size:24px;}
+  h1{font-size:43px; margin-bottom:2rem;}
+  h2{font-size:28px;}
+  .small-title{font-size:28px; margin-bottom:30px;}
+  .heroSection:after{width:18%;}
+  .heroSection .heroThumb{width:12rem; bottom:-4rem; left:5rem;}
+  .heroText h1{padding-left:5rem;}
+  .aboutText{padding-left:4rem;}
+  .aboutPage .teamSec .flexItem{width:31%;}
+}
 /* Extra Large Devices (xl) - 1280px and up */
-@media (min-width: 1280px) {  }
 
+@media (min-width:1280px){
+  .propertiesBanner{height:50vh; margin-top:74px;}
+  .heroSection .heroThumb{width:14rem; bottom:-4rem; left:5rem;}
+  .aboutPage .teamSec .flexItem{width:24%;}
+}
 /* 2 Extra Large Devices (2xl) - 1536px and up */
-@media (min-width: 1536px) {}
- 
-/*------------------------------------------
-  Foundation Media Queries 
-   http://foundation.zurb.com/docs/media-queries.html
---------------------------------------------*/
- 
-/* Small screens - MOBILE */
-@media (max-width:639px) { 
 
-
-
-} /* Define mobile styles - Mobile First */
- 
-@media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
- 
-/* Medium screens - TABLET */
-@media only screen and (min-width: 40.063em) { } /* min-width 641px, medium screens */
- 
-@media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
- 
-/* Large screens - DESKTOP */
-@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
- 
-@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
- 
-/* XLarge screens */
-@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
- 
-@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
- 
-/* XXLarge screens */
-@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xlarge screens */
- 
-/*------------------------------------------*/
- 
- 
- 
-/* Portrait */
-@media screen and (orientation:portrait) { /* Portrait styles here */ }
-/* Landscape */
-@media screen and (orientation:landscape) { /* Landscape styles here */ }
- 
- 
-/* CSS for iPhone, iPad, and Retina Displays */
- 
-/* Non-Retina */
-@media screen and (-webkit-max-device-pixel-ratio: 1) {
+@media (min-width:1536px){
+  .propertiesSingle .propertiesForm{position: sticky; top: 96px;}
+  .propertiesBanner {height: 60vh;margin-top: 74px;}
+  .conceirageServices .tabUl li button{padding:45px 0;}
+  .conceirageServices .conceirageServicesTab ul li{padding-block:30px;}
+  .timeLine .tl-container::after{right:-5.5px;}
+  .timeLine .tl-right::after{left:-9.5px;}
+  h1{font-size:48px; margin-bottom:2rem;}
+  h2{font-size:30px;}
+  .small-title{font-size:30px; margin-bottom:34px;}
+  .heroSection .heroThumb{width:18rem; bottom:-10rem; left:11rem;}
+  .aboutText{padding-left:10rem;}
+  .heroText h1{padding-left:10rem;}
 }
- 
-/* Retina */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-}
- 
-/* iPhone Portrait */
-@media screen and (max-device-width: 480px) and (orientation:portrait) {
-} 
- 
-/* iPhone Landscape */
-@media screen and (max-device-width: 480px) and (orientation:landscape) {
-}
- 
-/* iPad Portrait */
-@media screen and (min-device-width: 481px) and (orientation:portrait) {
-}
- 
-/* iPad Landscape */
-@media screen and (min-device-width: 481px) and (orientation:landscape) {
-}
- 

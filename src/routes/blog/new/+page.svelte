@@ -8,12 +8,10 @@
   import { currentUser, isEditing } from '$lib/stores';
   import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
 
-
-
   let showUserMenu = false,
     title = 'Untitled',
-    content = 'Copy and paste your text here.';
-
+    content = 'Copy and paste your text here.',
+    featuredImage = ''; 
   $: {  
     $isEditing = true;
   }
@@ -27,7 +25,8 @@
       const { slug } = await fetchJSON('POST', '/api/create-article', {
         title,
         content,
-        teaser
+        teaser,
+        featuredImage
       });
       goto(`/blog/${slug}`);
     } catch (err) {
@@ -47,10 +46,8 @@
 
 <WebsiteHeader bind:showUserMenu on:cancel={discardDraft} on:save={createArticle} />
 
-<Article bind:title bind:content />
 
-<NotEditable>
-  <EditableWebsiteTeaser />
-</NotEditable>
+<Article bind:title bind:content bind:featuredImage />
 
-<Footer counter="/blog/new" />
+
+

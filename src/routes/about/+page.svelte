@@ -17,7 +17,7 @@
 
 	import LoginMenu from "$lib/components/LoginMenu.svelte";
 
-	import bannerImage from "$lib/img/hero4.jpeg";
+
 	import heroThumb from "$lib/img/heroThumb.webp";
 
 	import rendering from "$lib/img/building-vector.svg";
@@ -27,9 +27,11 @@
 	import WebsiteHeader from "$lib/components/WebsiteHeader.svelte";
 	import { Card, Button, Toggle, Label, Input, Textarea } from "flowbite-svelte";
 
-	import { superForm } from "sveltekit-superforms/client";
+
 
 	import toast from "svelte-french-toast";
+	import ContactForm from "$lib/components/ContactForm.svelte";
+
 	export let data;
 	export let form;
 
@@ -89,14 +91,14 @@
 	<LoginMenu />
 </WebsiteHeader>
 <div class="container mx-auto">
-	<div class="heroText mt-28 lg:max-w-2xl">
+	<div class="heroText mt-24 md:mt-32  lg:max-w-2xl xl:max-w-3xl">
 		<h1 class="">
 			<PlainText bind:content={title} />
 		</h1>
 	</div>
 </div>
 <div
-	class="container-fluid heroSection p-0 flex items-end h-[400px] md:h-[700px]"
+	class="container-fluid heroSection about p-0 flex items-end h-[400px] md:h-[420px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px]"
 	style="background: url({ohio_1}) top center no-repeat; background-size: cover;background-attachment: fixed;">
 	<div class="heroThumb border-8 border-white shadow-md">
 		<img src={heroThumb} alt="" />
@@ -105,13 +107,14 @@
 <!-- End Hero Section -->
 
 <div
-	class="container-fluid aboutUs mt-12 sm:mt-16 md:mt-20"
-	style="background: url({rendering}) top right no-repeat; background-size: contain;">
-	<div class="container mx-auto grid grid-cols-3 py-16 md:py-28">
-		<div class="aboutText col-span-3 md:col-span-2">
+	class="container-fluid aboutUs my-16 sm:my-20 md:my-24 xl:mt-40 2xl:mt-56"
+	style="background: url({rendering}) top right no-repeat; background-size: contain;background-attachment:fixed;">
+	<div class="container mx-auto grid grid-cols-4  ">
+		
+		<div class="aboutText col-span-4 md:col-span-3">
 			<RichText multiLine bind:content={aboutUs} />
 
-			<a href="/about" class="tBtn2 tBtn2Alt mt-6 md:mt-8">Learn More</a>
+			<!-- <a href="/concierge" class="tBtn2 tBtn2Alt mt-6 md:mt-8">Our Services</a> -->
 		</div>
 	</div>
 </div>
@@ -120,7 +123,7 @@
 		<h2 class="small-title text-center mb-6">Our core values</h2>
 		<Accordion
 			class="shadow-md"
-			activeClass="font-light bg-primary-50 text-blue-600 focus:ring-0 text-lg font-light m-0"
+			activeClass="text-sm bg-primary-50 text-blue-600 focus:ring-0 text-lg font-light m-0"
 			inactiveClass="font-light bg-white text-lg font-light m-o  hover:bg-white">
 			<AccordionItem open>
 				<span slot="header">Expertise</span>
@@ -163,8 +166,10 @@
 <div class="container-fluid aboutPage pt-16 md:pt-24 lg:pt-32 2xl:pt-36">
 	<div class="container mx-auto">
 		<div class="grid grid-cols-4">
-			<div class="aboutText col-span-4 md:col-span-2">
+			<div class="aboutText col-span-4 md:col-span-3">
 				<RichText multiLine bind:content={aboutTeam} />
+
+		
 			</div>
 		</div>
 	</div>
@@ -183,44 +188,32 @@
 				<p>Vestibulum</p>
 			</div>
 		</div>
-		<div class="flexItem bg-accent pb-10">
+		<div class="flexItem bg-accent self-stretch max-w-sm max-auto py-6 sm:py-">
 			<div class="flexText">
-				<h3 class="text-primary-700">Interested to work in real estate?</h3>
+				<h3 class="text-primary-700 font-md">Interested in working with us?</h3>
 
 				<a href="/about" class="tBtn2 tBtn2Alt mt-8 mt-8 md:mt-14">Apply here</a>
 			</div>
 		</div>
 	</div>
+<div class="container mx-auto grid grid-cols-4 py-16 md:py-24 lg:py-32 2xl:py-36">
+	<div class="aboutText col-span-4 md:col-span-3">
+		<RichText multiLine bind:content={ourStory} />
+	</div>
+</div>
+	
 </div>
 <div
-	class="container-fluid callToAction aboutCta py-20 flex items-center"
-	style="background: url({white_2}) center center no-repeat; background-size: cover;">
+	class="container-fluid callToAction aboutCta py-20 flex items-center bg-fixed bg-cover cover"
+	style="background: url({white_2}) center center no-repeat; ">
 	<div
-		class="container mx-auto flex flex-wrap items-center gap-16 lg:gap-24 xl:gap-32 relative z-10">
+		class="container mx-auto relative z-10">
 		<!-- <div class="aboutText flex-1 md:col-span-2">
 			<RichText multiLine bind:content={ourStory} />
 		</div> -->
 
 		
-			<Card class="mt-6 w-full" padding="xl" size="md">
-				<h2 class="title title-2">Get in touch.</h2>
-				<form method="POST" class="flex flex-col space-y-6">
-					<Label class="space-y-2" for="email">
-						<span>Email</span>
-						<Input type="email" name="email" value="hello@crocodaily.com" />
-					</Label>
-					<Label class="space-y-2" for="senderName">
-						<span>Name</span>
-						<Input type="text" name="senderName" value="John Doe" />
-					</Label>
-					<Label class="space-y-2" for="body">
-						<span>Your Message</span>
-						<Textarea id="textarea-id" placeholder="Your message" rows="4" name="body" />
-					</Label>
-					<button type="submit" class="tBtn2 w-full tBtn2Alt mt-6 border-myBlue">Submit</button>
-					<p class="success">{form?.success || ""}</p>
-				</form>
-			</Card>
+		<ContactForm />
 	
 	</div>
 </div>

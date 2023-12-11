@@ -30,6 +30,7 @@
   import { currentUser, isEditing } from '$lib/stores.js';
   import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
   import { Card, Button, Toggle } from 'flowbite-svelte';
+   import ContactForm from "$lib/components/ContactForm.svelte";
   export let data;
   import { GiftBoxSolid, ArrowUpRightFromSquareOutline,ShieldCheckOutline,ScaleBalancedOutline,ZoomInOutline } from 'flowbite-svelte-icons';
 
@@ -151,29 +152,34 @@ swiperEl.initialize();
 
 </div> -->
 <!-- End Hero Section -->
-<div class="container mx-auto">
+<!-- <div class="container mx-auto">
 	<div class="heroText mt-28 lg:max-w-2xl">
 		<h1 class="">
 			<PlainText bind:content={title} />
 		</h1>
 	</div>
-</div>
+</div> -->
 <div
-	class="container-fluid heroSection p-0 flex items-end h-[400px] md:h-[700px]"
+	class="container-fluid heroSection home p-0 flex h-screen items-center justify-center"
 	style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
-	<!-- <div class="heroThumb border-8 border-white shadow-md">
-		<img src={heroThumb} alt="" />
-	</div> -->
+<div class="grid grid-cols-5 self-stretch">
+  <div class="heroText col-span-5 md:col-span-2  bg-slate-50 flex items-center">
+    <h1 class="lg:max-w-2xl text-primary-700">
+      <PlainText bind:content={title} />
+    </h1>
+  </div>
+</div>
+    
+  
+	
 </div>
 
   <div class="container-fluid aboutUs" style="background: url({rendering}) top right no-repeat; background-size: contain;">   
     <div class="container mx-auto grid grid-cols-3 py-12 md:py-20 lg:py-28 2xl:py-32" >   
     <div class="aboutText col-span-3 md:col-span-2">
       <h2 class="small-title">We do it smart</h2>
-      <RichText multiLine bind:content={aboutUs} />
-      
-       <a href="/about" class="tBtn2 tBtn2Alt  mt-8 mt-8  md:mt-14">Learn More</a>
-    
+      <RichText multiLine bind:content={aboutUs} />      
+       <a href="/about" class="tBtn2 tBtn2Alt mt-8 mt-8  md:mt-14">Learn More</a>    
     </div>
   </div>
 </div>
@@ -186,8 +192,7 @@ swiperEl.initialize();
       <swiper-container  init="false">    
         <div slot="container-start" class="navWrapper">
           <div class="swiper-button-next">
-            <i class="fa-solid fa-arrow-right"></i>
-   
+            <i class="fa-solid fa-arrow-right"></i>   
            </div>
            <div class="swiper-button-prev">
              <i class="fa-solid fa-arrow-left"></i>
@@ -332,7 +337,7 @@ swiperEl.initialize();
   <section class="services pb-12 md:pb-16 lg:pb-20 2xl:pb-24">
     <div class="container mx-auto" data-aos="fade-up">
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-32 pb-4">
      
         <div class="rounded-lg shadow p-6 relative isolate border hover:border-primary-700" style="background: url({box1}) top right no-repeat; background-size: contain;">
           <ZoomInOutline class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" strokeWidth="1"/>
@@ -372,18 +377,15 @@ swiperEl.initialize();
   </section><!-- End Services Section -->
 
   <!-- ======= Call To Action Section ======= -->
-  <div class="container-fluid callToAction  h-screen" style="background: url({homeCta}) top right no-repeat; background-size: cover;background-attachment:fixed;">   
-    <div class="ctaText shadow-md">
-      <a href="#">
-        <h2 class="title title-2">We always want to go a step further</h2>
-        <p class="texte-c contenu widowFix">That's why we take the time to find the solutions that meet
-          your needs
-        </p>
-       
-        <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Let's go further</a>
-
-      </a>
+    <div
+    class="container-fluid callToAction aboutCta py-20 flex items-center justify-end"
+    style="background: url({homeCta}) center center no-repeat; background-size: cover; ">
+    <div
+      class="container mx-auto relative z-10 flex items-end">
+      <ContactForm />
+     
     </div>
   </div>
+
 
 

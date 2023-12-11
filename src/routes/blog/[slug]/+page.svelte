@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import { extractTeaser, fetchJSON } from '$lib/util';
   import PrimaryButton from '$lib/components/PrimaryButton.svelte';
   import WebsiteNav from '$lib/components/WebsiteNav.svelte';
@@ -14,9 +16,9 @@
   import { currentUser, isEditing } from '$lib/stores';
 
   export let data;
-console.log(data.nextArticles)
+
   let showUserMenu = false;
-  let title, teaser, content, published_at, updatedAt;
+  let title, teaser,featuredImage, content, published_at, updatedAt;
 
   $: {
  
@@ -27,11 +29,12 @@ console.log(data.nextArticles)
     title = data.title;
     teaser = data.teaser;
     content = data.content;
+    featuredImage = data.featuredImage;
     published_at = data.published_at;
     updatedAt = data.updated_at;
     $isEditing = false;
   }
-
+console.log(featuredImage);
   function toggleEdit() {
     $isEditing = true;
     showUserMenu = false;
@@ -58,6 +61,7 @@ console.log(data.nextArticles)
       const result = await fetchJSON('POST', '/api/update-article', {
         slug: data.slug,
         title,
+        featuredImage,
         content,
         teaser
       });
@@ -92,7 +96,7 @@ console.log(data.nextArticles)
   </Modal>
 {/if}
 
-<Article bind:title bind:content bind:published_at />
+<Article bind:title bind:content bind:featuredImage bind:published_at />
 
 {#if data.nextArticles.length > 0}
   <NotEditable>

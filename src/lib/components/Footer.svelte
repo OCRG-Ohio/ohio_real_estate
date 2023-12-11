@@ -17,7 +17,7 @@
 <NotEditable>
   <footer class="p-4 bg-primary-700 md:p-8 lg:p-10  ">
     <div class="mx-auto max-w-screen-xl text-center">
-        <a href="/" class="flex justify-center items-center text-2xl lg:text-3xl font-normal text-white pt-10 lg:pt-16">
+        <a href="/" class="flex justify-center items-center text-xl lg:text-3xl font-normal text-white pt-10 lg:pt-16">
           Ohio Concierge Realty Group  
         </a>      
         <ul class="flex flex-wrap justify-center items-center my-8 text-white">

@@ -37,28 +37,34 @@
 
     progress = 0;
     try {
-      if ($currentUser) {
-        await uploadAsset(resizedFile, path, p => {
-          progress = p;
-        });
-      }
+        let uploadedImageUrl = src;
+        if ($currentUser) {
+            uploadedImageUrl = await uploadAsset(resizedFile, path, p => progress = p);
+        }
 
-      editorView.dispatch(
-        editorState.tr.replaceSelectionWith(
-          schema.nodes.image.createAndFill({
-            src,
-            width,
-            height
-          })
-        )
-      );
-      editorView.focus();
-      progress = undefined;
+        // Guard against null editorView
+        if (!editorView) {
+            console.error("Editor view is not initialized");
+            return;
+        }
+
+        // Dispatch transaction
+        editorView.dispatch(
+            editorState.tr.replaceSelectionWith(
+                schema.nodes.image.createAndFill({
+                    src: uploadedImageUrl,
+                    width,
+                    height
+                })
+            )
+        );
+        editorView.focus();
     } catch (err) {
-      console.error(err);
-      progress = undefined;
+        console.error("Error in uploadImage:", err);
+    } finally {
+        progress = undefined;
+        fileInput.value = null;
     }
-    fileInput.value = null;
   }
 </script>
 

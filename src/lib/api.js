@@ -20,7 +20,7 @@ import {supabase} from "$lib/server/supabase"
 /**
  * Creates a new article
  */
-export async function createArticle(title, content, teaser, currentUser) {
+export async function createArticle(title, content, teaser, featuredImage, currentUser) {
   if (!currentUser) throw new Error('Not authorized');
 
   let slug = slugify(title, {
@@ -43,6 +43,7 @@ export async function createArticle(title, content, teaser, currentUser) {
       title,
       content,
       teaser,
+      featuredImage,
       published_at: new Date().toISOString(),
     },
     select: { slug: true, created_at: true },
@@ -55,7 +56,7 @@ export async function createArticle(title, content, teaser, currentUser) {
 /**
  * We automatically extract a teaser text from the document's content.
  */
-export async function updateArticle(slug, title, content, teaser, currentUser) {
+export async function updateArticle(slug, title, content, teaser, featuredImage, currentUser) {
   if (!currentUser) throw new Error('Not authorized');
 
   const updatedArticle = await prisma.article.update({
@@ -64,6 +65,7 @@ export async function updateArticle(slug, title, content, teaser, currentUser) {
       title,
       content,
       teaser,
+      featuredImage,
       updated_at: new Date().toISOString(),
     },
     select: { slug: true, updated_at: true },
@@ -92,13 +94,13 @@ export async function getArticles(currentUser) {
     // When logged in, show both drafts and published articles
     articles = await prisma.article.findMany({
       orderBy: { modified_at: 'desc' },
-      select: { slug: true, title: true, content: true, teaser: true, published_at: true, updated_at: true, created_at: true },
+      select: { slug: true, title: true, content: true, teaser: true, featuredImage:true, published_at: true, updated_at: true, created_at: true },
     });
   } else {
     articles = await prisma.article.findMany({
       where: { published_at: { not: null } },
       orderBy: { published_at: 'desc' },
-      select: { slug: true, title: true, content: true, teaser: true, published_at: true, updated_at: true, created_at: true },
+      select: { slug: true, title: true, content: true, teaser: true,featuredImage:true, published_at: true, updated_at: true, created_at: true },
     });
   }
 
@@ -131,9 +133,9 @@ export async function getNextArticle(slug) {
   const result = await prisma.$queryRaw`
     SELECT title, teaser, slug, published_at
     FROM (
-      SELECT ${previousPublished?.title || ''} as title, ${previousPublished?.teaser || ''} as teaser, ${previousPublished?.slug || ''} as slug, ${previousPublished?.published_at} as published_at
+      SELECT ${previousPublished?.title || ''} as title, ${previousPublished?.teaser || ''} as teaser,${previousPublished?. featuredImage || ''} as  featuredImage, ${previousPublished?.slug || ''} as slug, ${previousPublished?.published_at} as published_at
       UNION
-      SELECT ${latestArticle?.title || ''} as title, ${latestArticle?.teaser || ''} as teaser, ${latestArticle?.slug || ''} as slug, ${latestArticle?.published_at} as published_at
+      SELECT ${latestArticle?.title || ''} as title, ${latestArticle?.teaser || ''} as teaser,${previousPublished?. featuredImage || ''} as  featuredImage, ${latestArticle?.slug || ''} as slug, ${latestArticle?.published_at} as published_at
     ) AS subquery
     WHERE published_at IS NOT NULL -- Exclude rows with empty published_at
     ORDER BY published_at ASC
@@ -331,21 +333,23 @@ export async function getAsset(asset_id) {
     select: { asset_id: true, mime_type: true, updated_at: true, size: true, data: true },
   });
 
-  if (!asset) {
+  if (!asset || !asset.data) {
     return null;
   }
 
-  const filename = asset.asset_id.split('/').slice(-1)[0]; // Get the last part of the split array
-const supabaseStorageURL = "https://yplejatygdmrnsaocsfk.supabase.co/storage/v1/object/public/quill_files"
+  const filename = asset.asset_id.split('/').pop(); // More reliable way to get the last part
+  const supabaseStorageURL = "https://yplejatygdmrnsaocsfk.supabase.co/storage/v1/object/public/quill_files/kelli";
+
   return {
     filename,
     mimeType: asset.mime_type,
     lastModified: asset.updated_at,
     size: asset.size,
     data: new Blob([Buffer.from(asset.data)], { type: asset.mime_type }),
-    url: `${supabaseStorageURL}/kelli/${asset_id}`, // Adjust the folder path as needed
+    url: `${supabaseStorageURL}/${filename}`, // Use the extracted filename
   };
 }
+
 
 /**
  * Helpers
