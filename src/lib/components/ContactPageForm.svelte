@@ -101,14 +101,11 @@
 			{#if formErrors.body}<span class="error">{formErrors.body}</span>{/if}
 			<small>
 				Nulla facilisi. Sed vitae magna sed purus fringilla ornare. Nullam non molestie sem, quis
-				consectetur nunc. Proin massa quam, fringilla interdum tempor et, sodales ut mi. Nam
-				imperdiet lorem in tellus cursus gravida. Phasellus finibus auctor metus, quis vestibulum
-				felis tristique sit amet. Duis in bibendum velit. Morbi ut tortor commodo, facilisis purus
-				nec, efficitur felis. Phasellus dictum enim vel arcu placerat gravida.
+				consectetur nunc. Proin massa quam, fringilla interdum tempor et, sodales ut mi.
 			</small>
 			<button
 				type="submit"
-				class="tBtn2 w-full tBtn2Alt mt-6 relative items-center gap-2"
+				class="tBtn2  tBtn2Alt mt-6 relative items-center gap-2"
 				id="submitButton"
 				disabled={isLoading}>
 				{#if isLoading}

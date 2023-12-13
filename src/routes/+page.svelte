@@ -172,7 +172,7 @@ swiperEl.initialize();
     <h1 class="md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl xl:mr-16 text-primary-700">
       <PlainText bind:content={title} />
     </h1>
-    <a href="/about" class="tBtn2 tBtn2Alt mt-6">Property Search</a>    
+    <a href="/properties" class="tBtn2 tBtn2Alt mt-6">Property Search</a>    
 
   </div>
 </div>
@@ -290,6 +290,8 @@ swiperEl.initialize();
           </swiper-slide>    
       
       </swiper-container>
+    <a href="/properties" class="tBtn2 tBtn2Alt mt-6">View All</a>    
+
     </div>
   </div>
 
@@ -343,7 +345,7 @@ swiperEl.initialize();
           </a>
           <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
             ut nesciunt dolorem.</p>
-            <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
+            <a href="/properties" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
         <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow  p-6 isolate" style="background: url({box2}) top right no-repeat; background-size: contain;">
@@ -353,7 +355,7 @@ swiperEl.initialize();
           </a>
           <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
             ut nesciunt dolorem.</p>
-            <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
+            <a href="/valuation" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
         <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow p-6 isolate" style="background: url({box3}) top left no-repeat; background-size: contain;">
@@ -363,7 +365,7 @@ swiperEl.initialize();
           </a>
           <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
             ut nesciunt dolorem.</p>
-            <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
+            <a href="/concierge" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
      

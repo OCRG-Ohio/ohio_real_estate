@@ -86,33 +86,29 @@ let images = [
 	<PrimaryButton on:click={toggleEdit}>Edit page</PrimaryButton>
 	<LoginMenu />
 </WebsiteHeader>
-<div class="container-fluid propertiesSingle  py-20">
-	<div class="container mx-auto">
-		<div class="grid grid-cols-12">
-			<div class="col-span-12">
-				<div class="propertyDetailInfo">
-					<!-- <div class="fotorama" data-nav="thumbs" ata-autoplay="true">
-						<a href={ohio_1}><img src={ohio_1} /></a>
-						<a href={ohio_2}><img src={ohio_2} /></a>
-						<a href={white_2}><img src={white_2} /></a>
-					</div> -->
-					<SwiperComponent {images} />
+<div class="container-fluid propertiesSingle  py-10">
+	<div class="container mx-auto ">
+		<SwiperComponent {images} />
+		<div class="grid grid-cols-12 xl:gap-6">
+			<div class="col-span-12 xl:col-span-8 2xl:col-span-9">
+				<div class="propertyDetailInfo">	
+				
 					<section class="propertyInfo">
-						<div class="title mb-8">
+						<div class="title mb-8 mt-4">
 							<div class="flex flex-col md:flex-wrap md:flex-row md:justify-between lg:items-end">
 								<div class="">
-									<h3 class="text-xl md:text-2xl font-semibold">Phasellus Suscipit Elementum</h3>
+									<h3 class="text-lg md:text-2xl font-medium">Phasellus Suscipit Elementum</h3>
 									<div class="address">Nullam 123, NW Drive</div>
 								</div>
 								
-								<span><b>$99,999,999</b></span>
+								<span class="font-normal">$99,999,999</span>
 							</div>
 							
 							<hr class="mt-4" />
 						</div>
 						<div class="propertyText">
-							<div class="flex flex-wrap">
-								<div class="w-full lg:w-1/3 mb-4 lg:mb-0">
+							<div class="grid grid-cols-12">
+								<div class="col-span-12 md:col-span-3 xl:col-span-2 mb-4 lg:mb-0">
 									<ul class="flex flex-wrap gap-y-2">
 										<li class="w-full flex flex-row items-center gap-x-2">
 											<svg
@@ -185,8 +181,8 @@ let images = [
 									</ul>
 								</div>
 
-								<div class="w-full lg:w-2/3">
-									<p>
+								<div class="col-span-12 md:col-span-9 xl:col-span-10">
+									<p class="mt-0">
 										Ut ligula neque, condimentum eu sollicitudin non, porttitor non velit. Fusce
 										fringilla, velit eu semper dapibus, purus mi commodo sapien, vitae cursus elit
 										dui id libero. Nunc in vulputate elit. Pellentesque ut risus urna. Quisque nisl
@@ -217,7 +213,7 @@ let images = [
 					<section class="propertyFeatures mt-8">
 						<div>
 							<div>
-								<h3 class="text-xl font-semibold">Interior Features</h3>
+								<h3 class="text-xl font-medium mb-4">Interior Features</h3>
 							</div>
 							<dl class="grid gap-4">
 								<div class="flex flex-col md:flex-row md:justify-between md:gap-x-4">
@@ -295,7 +291,7 @@ let images = [
 						</div>
 						<div class="exteriorFeatures">
 							<div>
-								<h3 class="text-xl font-semibold">Exterior/Building Features</h3>
+								<h3 class="text-xl font-medium mb-3">Exterior/Building Features</h3>
 							</div>
 							<dl class="grid gap-4">
 								<div class="flex flex-col md:flex-row md:justify-between md:gap-x-4">
@@ -312,7 +308,7 @@ let images = [
 					<section class="schoolFeatures mt-8">
 						<div>
 							<div>
-								<h3 class="text-xl font-semibold">School Information</h3>
+								<h3 class="text-xl font-medium mb-3">School Information</h3>
 							</div>
 							<dl class="grid gap-4">
 								<div class="flex flex-col md:flex-row md:justify-between md:gap-x-4">
@@ -331,7 +327,7 @@ let images = [
 					<section class="otherFeatures mt-8 mb-12">
 						<div>
 							<div>
-								<h3 class="text-xl font-semibold">Other Property Details</h3>
+								<h3 class="text-xl font-medium mb-3">Other Property Details</h3>
 							</div>
 							<dl class="grid gap-4">
 								<div class="flex flex-col md:flex-row md:justify-between md:gap-x-4">
@@ -403,7 +399,7 @@ let images = [
 			</div>
 
 			<!-- Sidebar Column (1/4) -->
-			<div class="col-span-12">
+			<div class="col-span-12 xl:col-span-4 2xl:col-span-3 xl:mt-8">
 				<div class="propertiesForm">
 					<div class="contactInfo">
 						<h2>Ohio Conceirage Properties Group</h2>

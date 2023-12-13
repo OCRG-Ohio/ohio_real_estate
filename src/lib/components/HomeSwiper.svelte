@@ -16,7 +16,9 @@ const swiperEl = document.querySelector('swiper-container');
 const swiperParams = {
 
 slidesPerView: 1,
-spaceBetween: 30,
+spaceBetween: 10,
+loop:true,
+autoplay:true,
 
 navigation: {
       nextEl: '.swiper-button-next',
@@ -24,7 +26,7 @@ navigation: {
     },
 breakpoints: {
   768: {
-    slidesPerView: 1,
+    slidesPerView: 2,
   },
   1199: {
     slidesPerView: 2,

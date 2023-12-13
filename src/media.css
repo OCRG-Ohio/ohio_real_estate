@@ -28,7 +28,10 @@
 
 @media (min-width:768px){
   .propertiesSingle .propertyDetailInfo {padding: 0 0 0 0;}
-  .propertiesSingle .propertiesForm h2{font-size: 22px;}
+  .propertiesSingle .propertiesForm h2 {
+    font-size: 26px;
+    margin-bottom: 1.5rem!important;
+  }
   .conceirageServices .tabUl li{flex-basis:50%;}
   .conceirageServices .tabUl li button{padding:30px 0;}
   .conceirageServices .container div + div{margin-top:0 !important;}

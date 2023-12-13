@@ -796,7 +796,7 @@ footer {
 .contactPage::before {position: absolute; content: ''; width: 100%; height: 100%; background: rgba(255,255,255,0.9); left: 0; top: 0; display: block; z-index: -1;}
 .contactPage .contactFormInner form textarea, .contactPage .contactFormInner form input { background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.7);}
 .contactPage .contactFormInner form textarea:focus, .contactPage .contactFormInner form input:focus {box-shadow: none; border-color: var(--myBlue);}
-.contactInfo .contactInfoInner{display: flex; margin-bottom: 20px;}
+.contactInfo .contactInfoInner{display: flex; margin-bottom: 20px;align-items: center;}
 .contactInfo .contactInfoInner p {line-height: 1; margin-bottom: 0; font-size: 18px;}
 .contactInfo .contactInfoInner i {width: 33px; margin-right: 10px;}
 .contactInfo .contactInfoInner span {line-height: 1; display: inline-block; margin-top: 7px;}
