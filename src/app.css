@@ -16,7 +16,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-body{font-family:var(--font-default); color:var(--color-default); overflow-x:hidden;box-sizing:border-box;font-size:15px; line-height:28px; font-weight:300;scroll-behavior:smooth;color: #16161D;}
+body{font-family:var(--font-default); color:var(--color-default); overflow-x:hidden;box-sizing:border-box;font-size:15px; line-height:28px; font-weight:300;scroll-behavior:smooth;color: #0C0404;}
 .bg-white{--bs-bg-opacity:0;}
 
 h1, h2, h3{
@@ -244,6 +244,9 @@ footer .logo *{color:#ffffff;}
 	color: #ffffff;
 }
 
+.nonActiveClass {
+  color:#0C0404;
+}
 .whiteNav  .nonActiveClass {
   color:#fff;
 }
@@ -256,7 +259,6 @@ footer .logo *{color:#ffffff;}
   color:#fff;
 }
 .whiteNav .tBtn2.tBtn2Alt {
-	border: 1px solid #ffffff;
 	color: #ffffff;
 }
 .whiteNav .tBtn2::before {color:#ffffff;}

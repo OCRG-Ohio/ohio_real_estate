@@ -60,6 +60,11 @@
 
   .mainNav .tBtn2 {
     display: block;
+    background:var(--myBlue);
+    color:#ffffff;
+  }
+  .mainNav .tBtn2:before {   
+    color:#ffffff;
   }
   .navigation >ul >li:last-child{display:none;}
   .propertiesBanner{height:40vh; margin-top:74px;}
