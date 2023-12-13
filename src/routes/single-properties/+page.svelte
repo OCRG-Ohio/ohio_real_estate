@@ -68,7 +68,7 @@ let images = [
 
 <svelte:head>
 	<title>Properties Single</title>
-	<meta name="description" content="Make changes to your website while browsing it." />
+	<meta name="description" content="Real Estate and Concierge Services" />
 	<link rel="alternate" hreflang="en" href="https://editable.website" />
 	<link rel="canonical" href="https://editable.website" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css"

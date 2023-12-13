@@ -126,7 +126,7 @@ swiperEl.initialize();
 
 <svelte:head>
   <title>Di Lusso Real Estate</title>
-  <meta name="description" content="Make changes to your website while browsing it." />
+  <meta name="description" content="Real Estate and Concierge Services" />
   <link rel="alternate" hreflang="en" href="https://editable.website" />
   <link rel="canonical" href="https://editable.website" />
 </svelte:head>
@@ -159,14 +159,21 @@ swiperEl.initialize();
 		</h1>
 	</div>
 </div> -->
+<div class="container mx-auto block md:hidden mt-20">
+  <h1>
+    <PlainText bind:content={title} />
+  </h1>
+</div>
 <div
-	class="container-fluid heroSection home p-0 flex h-screen items-center justify-center"
+	class="container-fluid heroSection home p-0 flex h-[50vh] md:h-[70vh] xl:h-screen items-center justify-center "
 	style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
-<div class="grid grid-cols-5 self-stretch">
-  <div class="heroText col-span-5 md:col-span-2  bg-slate-50 flex items-center">
-    <h1 class="lg:max-w-2xl text-primary-700">
+<div class=" grid-cols-12 self-stretch md:grid hidden">
+  <div class="heroText col-span-12 md:col-span-6 xl:col-span-5  flex flex-col justify-center items-start md:bg-white md:pl-12 xl:pl-20">
+    <h1 class="md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl xl:mr-16 text-primary-700">
       <PlainText bind:content={title} />
     </h1>
+    <a href="/about" class="tBtn2 tBtn2Alt mt-6">Property Search</a>    
+
   </div>
 </div>
     
@@ -175,15 +182,15 @@ swiperEl.initialize();
 </div>
 
   <div class="container-fluid aboutUs" style="background: url({rendering}) top right no-repeat; background-size: contain;">   
-    <div class="container mx-auto grid grid-cols-3 py-12 md:py-20 lg:py-28 2xl:py-32" >   
+    <div class="container mx-auto grid grid-cols-3 py-10 md:py-20 lg:py-28 2xl:py-32" >   
     <div class="aboutText col-span-3 md:col-span-2">
       <h2 class="small-title">We do it smart</h2>
       <RichText multiLine bind:content={aboutUs} />      
-       <a href="/about" class="tBtn2 tBtn2Alt mt-8 mt-8  md:mt-14">Learn More</a>    
+       <a href="/about" class="tBtn2 tBtn2Alt mt-6   md:mt-8">Learn More</a>    
     </div>
   </div>
 </div>
-  <div class="container-fluid ohioSlider homeSlider listingsSec img-100 py-12 md:py-20 lg:py-28 2xl:py-32 bg-accent" >
+  <div class="container-fluid ohioSlider homeSlider listingsSec img-100 py-12 md:py-20 lg:py-28 2xl:py-32 bg-accent md:px-16" >
     <div class="container mx-auto">
       <div class="aboutSlideHeader">
         <h2 class="small-title swiperTitle">Featured Properties</h2>
@@ -207,7 +214,7 @@ swiperEl.initialize();
               <div class="listingContent">
                 <span class="price">$4,500,000</span>
                 <p>456 Ipsum Avenue, Sit Amet City, FL 54321</p>
-                <div class="listingInfo">
+                <div class="listingInfo mt-3">
                   <span>5 Beds</span> -
                   <span>3 Baths</span> -
                   <span>4,200 Sq.Ft.</span>
@@ -224,7 +231,7 @@ swiperEl.initialize();
               <div class="listingContent">
                 <span class="price">$5,999,000</span>
                 <p>123 Dollar Ipsum Lane, Lorem Two, OH 12345</p>
-                <div class="listingInfo">
+                <div class="listingInfo mt-3">
                   <span>4 Beds</span> - <span>4 Baths</span> - <span>3,660 Sq.Ft.</span>
                 </div>
               </div>
@@ -239,7 +246,7 @@ swiperEl.initialize();
               <div class="listingContent">
                 <span class="price">$3,200,000</span>
                 <p>789 Sit Avenue, Dolor Ipsum, TX 98765</p>
-                <div class="listingInfo">
+                <div class="listingInfo mt-3">
                   <span>3 Beds</span> -
                   <span>2 Baths</span> -
                   <span>2,000 Sq.Ft.</span>
@@ -256,7 +263,7 @@ swiperEl.initialize();
               <div class="listingContent">
                 <span class="price">$2,750,000</span>
                 <p>987 Ipsum Street, Consectetur City, IL 34567</p>
-                <div class="listingInfo">
+                <div class="listingInfo mt-3">
                   <span>6 Beds</span> -
                   <span>5 Baths</span> -
                   <span>5,000 Sq.Ft.</span>
@@ -273,7 +280,7 @@ swiperEl.initialize();
               <div class="listingContent">
                 <span class="price">$3,850,000</span>
                 <p>321 Amet Street, Adipiscing City, WA 56789</p>
-                <div class="listingInfo">
+                <div class="listingInfo mt-3">
                   <span>4 Beds</span> -
                   <span>3 Baths</span> -
                   <span>3,200 Sq.Ft.</span>
@@ -288,43 +295,33 @@ swiperEl.initialize();
 
 
   <!-- ======= Services Section ======= -->
-  <section class="services  py-12 md:py-20 lg:py-28 2xl:py-32" >
+  <section class="services  py-12 md:py-20 lg:py-28 2xl:py-32 lg:pl-16" >
     <div class="container mx-auto" data-aos="fade-up">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 lg:gap-40 2xl:gap-64">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-30 xl:gap-44">
         <div class="col-sapn-1 md:col-span-2">
           <h2 class="small-title">We make it simple</h2>
           <p>Nunc vel nunc elit. Phasellus dictum elit sit amet sem maximus rutrum. Pellentesque a sem pulvinar, pretium mauris sit amet, faucibus nunc. Nam a tellus sollicitudin enim consequat convallis. Suspendisse sit amet sapien posuere, volutpat quam hendrerit, suscipit tellus.</p>
         </div>
         <div class="col-sapn-1 md:col-span-1">
-          <ul class="max-w-md space-y-1 md:space-y-2  text-gray-500 list-inside dark:text-gray-400">
+          <ul class="max-w-md space-y-1 md:space-y-2  text-gray-800 list-inside">
             <li class="flex items-center">
-                <svg class="w-4 h-4 me-3 text-myBlue dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                 </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75"/></svg>
                  New Construction
             </li>
             <li class="flex items-center">
-                <svg class="w-4 h-4 me-3 text-myBlue dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                 </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75"/></svg>
                  Remodeling & Renovation
             </li>
             <li class="flex items-center">
-                <svg class="w-4 h-4 me-3 text-myBlue dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                 </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75"/></svg>
                  Design Services
             </li>
             <li class="flex items-center">
-                <svg class="w-4 h-4 me-3 text-myBlue dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                 </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75"/></svg>
                  Project Management
             </li>
             <li class="flex items-center">
-                <svg class="w-4 h-4 me-3 text-myBlue dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                 </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75"/></svg>
                  No Hassle Payment Process
             </li>
             
@@ -334,37 +331,37 @@ swiperEl.initialize();
       </div>
     </div>
     </section>
-  <section class="services pb-12 md:pb-16 lg:pb-20 2xl:pb-24">
-    <div class="container mx-auto" data-aos="fade-up">
+  <section class="services pb-12 md:pb-16 lg:pb-20 2xl:pb-24 lg:px-16">
+    <div class="container mx-auto" >
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-32 pb-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-4">
      
         <div class="rounded-lg shadow p-6 relative isolate border hover:border-primary-700" style="background: url({box1}) top right no-repeat; background-size: contain;">
-          <ZoomInOutline class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" strokeWidth="1"/>
+          <ZoomInOutline class="w-7 h-7 mb-3 text-gray-600 dark:text-gray-400" strokeWidth="1"/>
           <a href="/">
             <h5 class="mb-2 text-xl lg:text-2xl  tracking-tight text-myBlue dark:text-white">Property Search</h5>
           </a>
-          <p class="mb-3  text-gray-500 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
+          <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
             ut nesciunt dolorem.</p>
             <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
-        <div class="text-gray-500  rounded-lg border hover:border-primary-700 shadow  p-6 isolate" style="background: url({box2}) top right no-repeat; background-size: contain;">
-          <ScaleBalancedOutline class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" strokeWidth="1"/>
+        <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow  p-6 isolate" style="background: url({box2}) top right no-repeat; background-size: contain;">
+          <ScaleBalancedOutline class="w-7 h-7 mb-3 text-gray-600 dark:text-gray-400" strokeWidth="1"/>
           <a href="/">
             <h5 class="mb-2 text-xl lg:text-2xl tracking-tight text-myBlue dark:text-white">Property Valuation</h5>
           </a>
-          <p class="mb-3  text-gray-500 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
+          <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
             ut nesciunt dolorem.</p>
             <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
-        <div class="text-gray-500  rounded-lg border hover:border-primary-700 shadow p-6 isolate" style="background: url({box3}) top left no-repeat; background-size: contain;">
-          <ShieldCheckOutline class="w-7 h-7 mb-3 text-gray-500 dark:text-gray-400" strokeWidth="1" />
+        <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow p-6 isolate" style="background: url({box3}) top left no-repeat; background-size: contain;">
+          <ShieldCheckOutline class="w-7 h-7 mb-3 text-gray-600 dark:text-gray-400" strokeWidth="1" />
           <a href="/">
             <h5 class="mb-2 text-xl lg:text-2xl  tracking-tight text-myBlue dark:text-white">Concerage Services</h5>
           </a>
-          <p class="mb-3  text-gray-500 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
+          <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
             ut nesciunt dolorem.</p>
             <a href="/about" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
@@ -378,10 +375,10 @@ swiperEl.initialize();
 
   <!-- ======= Call To Action Section ======= -->
     <div
-    class="container-fluid callToAction aboutCta py-20 flex items-center justify-end"
+    class="container-fluid callToAction aboutCta py-20 flex items-center justify-center"
     style="background: url({homeCta}) center center no-repeat; background-size: cover; ">
     <div
-      class="container mx-auto relative z-10 flex items-end">
+      class="container mx-auto relative z-10 flex items-center justify-end">
       <ContactForm />
      
     </div>

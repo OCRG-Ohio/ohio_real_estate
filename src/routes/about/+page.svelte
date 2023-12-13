@@ -81,7 +81,7 @@
 
 <svelte:head>
 	<title>About Us</title>
-	<meta name="description" content="Make changes to your website while browsing it." />
+	<meta name="description" content="Real Estate and Concierge Services" />
 	<link rel="alternate" hreflang="en" href="https://editable.website" />
 	<link rel="canonical" href="https://editable.website" />
 </svelte:head>
@@ -178,14 +178,18 @@
 			<img src={team1} />
 			<div class="teamText">
 				<h3>Maecenas Mollis</h3>
-				<p>Nullam</p>
+				<p class="text-white">Nullam</p>
+				<a class="text-white text-base block" href="#">loremipsum@mail.com</a>
+				<a class="text-white text-base block">(123) 456-789-1155</a>
 			</div>
 		</div>
 		<div class="flexItem">
 			<img src={team2} />
 			<div class="teamText">
 				<h3>Sed Tristique</h3>
-				<p>Vestibulum</p>
+				<p class="text-white">Vestibulum</p>
+				<a class="text-white text-base block" href="#">loremipsum@mail.com</a>
+				<a class="text-white text-base block">(123) 456-789-1155</a>
 			</div>
 		</div>
 		<div class="flexItem bg-accent self-stretch max-w-sm max-auto py-6 sm:py-">

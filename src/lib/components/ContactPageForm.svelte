@@ -89,7 +89,7 @@
 				name="phone"
 				bind:value={form.phone}
 				placeholder="(123) 345-6789" />
-			{#if formErrors.email}<span class="error">{formErrors.phone}</span>{/if}
+			{#if formErrors.phone}<span class="error">{formErrors.phone}</span>{/if}
 
 			<textarea
 				required

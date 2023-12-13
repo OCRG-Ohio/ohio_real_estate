@@ -47,6 +47,12 @@ dependencies:
   langchain:
     specifier: ^0.0.180
     version: 0.0.180(@supabase/supabase-js@2.39.0)(pg@8.11.3)
+  leaflet:
+    specifier: ^1.9.4
+    version: 1.9.4
+  leaflet-control-geocoder:
+    specifier: ^2.4.0
+    version: 2.4.0(leaflet@1.9.4)
   lucide-svelte:
     specifier: ^0.294.0
     version: 0.294.0(svelte@4.2.8)
@@ -3008,6 +3014,20 @@ packages:
       uuid: 9.0.1
     dev: false
 
+  /leaflet-control-geocoder@2.4.0(leaflet@1.9.4):
+    resolution: {integrity: sha512-b2QlxuFd40uIDbnoUI3U9fzfnB4yKUYlmsXjquJ2d2YjoJqnyVYcIJeErAVv3kPvX3nI0gzvBq1XHMgSVFrGkQ==}
+    peerDependencies:
+      leaflet: ^1.6.0
+    dependencies:
+      leaflet: 1.9.4
+    optionalDependencies:
+      open-location-code: 1.0.3
+    dev: false
+
+  /leaflet@1.9.4:
+    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
+    dev: false
+
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -3358,6 +3378,12 @@ packages:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
+
+  /open-location-code@1.0.3:
+    resolution: {integrity: sha512-DBm14BSn40Ee241n80zIFXIT6+y8Tb0I+jTdosLJ8Sidvr2qONvymwqymVbHV2nS+1gkDZ5eTNpnOIVV0Kn2fw==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /openai@4.4.0:
     resolution: {integrity: sha512-JN0t628Kh95T0IrXl0HdBqnlJg+4Vq0Bnh55tio+dfCnyzHvMLiWyCM9m726MAJD2YkDU4/8RQB6rNbEq9ct2w==}

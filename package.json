@@ -70,6 +70,8 @@
 		"flowbite-svelte-blocks": "^0.5.1",
 		"gsap": "^3.12.3",
 		"langchain": "^0.0.180",
+		"leaflet": "^1.9.4",
+		"leaflet-control-geocoder": "^2.4.0",
 		"lucide-svelte": "^0.294.0",
 		"nanoid": "^4.0.2",
 		"nodemailer": "^6.9.7",

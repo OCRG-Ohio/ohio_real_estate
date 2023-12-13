@@ -90,7 +90,7 @@
 
 <svelte:head>
 	<title>About Us</title>
-	<meta name="description" content="Make changes to your website while browsing it." />
+	<meta name="description" content="Real Estate and Concierge Services" />
 	<link rel="alternate" hreflang="en" href="https://editable.website" />
 	<link rel="canonical" href="https://editable.website" />
 </svelte:head>

@@ -11,7 +11,7 @@
         top: y + "px"
       };
   
-      targetStyle = { color: "#000000" };
+      targetStyle = { color: " #16161D" };
     }
   
     function handleMouseOut() {

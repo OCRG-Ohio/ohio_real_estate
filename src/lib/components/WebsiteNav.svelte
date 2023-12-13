@@ -6,8 +6,11 @@
   import { isEditing, currentUser } from '$lib/stores.js';
   import { page } from '$app/stores';
   $: activeUrl = $page.url.pathname;
-  let activeClass = 'border-1 font-bold';
-  let nonActiveClass = 'text-gray-800 hover:text-primar-700 ';
+  $: whiteNav = (activeUrl === '/valuation' )
+                        ? 'whiteNav' 
+                        : '';
+  let activeClass = ' font-normal';
+  let nonActiveClass = 'text-gray-800 hover:text-primar-700 font-normal';
 import siteLogo from "$lib/img/delusso.png"
 import { ArrowRightOutline } from 'flowbite-svelte-icons';
 import gsap from 'gsap';
@@ -15,12 +18,11 @@ import gsap from 'gsap';
 
   const navigation = [
 		{ label: "About", href: "/about" },
-		{ label: "Home Valuation", href: "/valuation" },
+		{ label: "Property Valuation", href: "/valuation" },
 		{ label: "Concierge Services", href: "/concierge" },
 		{ label: "Properties", href: "/properties" },
-    {label: "Blog", href: "/blog" },
-
-	
+    {label: "Blog", href: "/blog" },	
+    {label: "Contact", href: "/contact" },	
 	]; 
 	import { onMount } from "svelte";
 	import { invalidate } from "$app/navigation";
@@ -87,14 +89,15 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
 
     <NotEditable>
-      <Navbar  class="fixed z-20 bg-transparent mainNav shadow">
+
+      <Navbar  class="fixed z-20  mainNav bg-transparent shadow {whiteNav}" >
         <NavBrand href="/">
           <!-- <img src={siteLogo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
           <span class="logo self-center whitespace-nowrap text-xl font-semibold">DI LUSSO</span>
         </NavBrand>
         <div class="flex md:order-2 flex-nowrap">
           {#if $currentUser}
-        <Button class="bg-transparent  text-primary-700 p-0 hover:bg-transparent outline-0 focus-within:ring-0">Dashboard<ChevronDownSolid class="w-3 h-3 ml-2 text-primary-700 dark:text-white" /></Button>
+        <Button class="bg-transparent dashBtn text-primary-700 p-0 hover:bg-transparent outline-0 focus-within:ring-0">Dashboard<ChevronDownSolid class="w-3 h-3 ml-2 text-primary-700 dark:text-white" /></Button>
         <Dropdown class="p-4">
           <DropdownItem href="/account">Settings</DropdownItem>
           <DropdownItem>
@@ -107,14 +110,14 @@ gsap.registerPlugin(ScrollTrigger);
           </form>
         </Dropdown>
       {:else}
-        <a href="/contact" class="tBtn2 tBtn2Alt ">
+        <a href="/contact" class="tBtn2 tBtn2Alt  ">
           Contact 
         </a>
       {/if}
           <NavHamburger />
         </div>
       
-        <NavUl {activeUrl} {activeClass} {nonActiveClass} class="order-1">
+        <NavUl {activeUrl} {activeClass} {nonActiveClass} class="order-1 navigation">
           {#each navigation as nav,i}
           <NavLi href={nav.href} class={activeUrl === nav.href ? 'activeClass' : 'nonActiveClass'}>{nav.label}</NavLi>
           {/each}

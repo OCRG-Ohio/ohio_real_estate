@@ -12,6 +12,17 @@
   .aboutPage .teamSec .flexItem{width:40%;}
   .conceirageServices .tabUl li{flex-basis:50%;}
   .conceirageServices .tabUl li button{text-align:center;}
+  .homeValuation .valuationForm {
+    flex-wrap: nowrap;  
+    align-items: flex-end;
+}
+.homeValuation .homeValuation3 button, .homeValuation .homeValuation2 button, .homeValuation .valuationForm button {
+  height: 46px;
+}
+.homeValuation .homeValuation3 h5 {
+  margin: 0 0 30px;
+  font-size: 30px;
+}
 }
 /* Medium Devices (md) - 768px and up */
 
@@ -33,6 +44,21 @@
 /* Large Devices (lg) - 1024px and up */
 
 @media (min-width:1024px){
+  body {
+
+    font-size: 16px;
+
+  }
+  .heroSection .heroText {
+   
+      background-color: rgb(255 255 255 / 0.7);
+ 
+  }
+
+  .mainNav .tBtn2 {
+    display: block;
+  }
+  .navigation >ul >li:last-child{display:none;}
   .propertiesBanner{height:40vh; margin-top:74px;}
   .conceirageServicesTab ul{justify-content:space-around;}
   .conceirageServices .conceirageServicesTab ul li{flex-basis:auto}
@@ -50,15 +76,29 @@
   h1{font-size:43px; margin-bottom:2rem;}
   h2{font-size:28px;}
   .small-title{font-size:28px; margin-bottom:30px;}
-  .heroSection:after{width:18%;}
+  .heroSection::after {
+    width: 25%;
+  }
+  .aboutUs::after {
+
+    width: 25%;
+
+  }
   .heroSection .heroThumb{width:12rem; bottom:-4rem; left:5rem;}
-  .heroText h1{padding-left:5rem;}
+  .heroText h1{}
   .aboutText{padding-left:4rem;}
   .aboutPage .teamSec .flexItem{width:31%;}
 }
 /* Extra Large Devices (xl) - 1280px and up */
 
 @media (min-width:1280px){
+  .homeValuation .homeValuation2 select, .homeValuation .homeValuation2 input, .homeValuation .valuationForm .address input {
+    font-size: 16px;
+  }
+  p{
+    margin-top:2rem;
+    color:#424242;
+  }
   .propertiesBanner{height:50vh; margin-top:74px;}
   .heroSection .heroThumb{width:14rem; bottom:-4rem; left:5rem;}
   .aboutPage .teamSec .flexItem{width:24%;}
@@ -66,16 +106,29 @@
 /* 2 Extra Large Devices (2xl) - 1536px and up */
 
 @media (min-width:1536px){
+  body {
+
+    font-size: 18px;
+
+  }
+  p{
+    margin-top:2rem;
+    color:#424242;
+  }
   .propertiesSingle .propertiesForm{position: sticky; top: 96px;}
   .propertiesBanner {height: 60vh;margin-top: 74px;}
   .conceirageServices .tabUl li button{padding:45px 0;}
   .conceirageServices .conceirageServicesTab ul li{padding-block:30px;}
   .timeLine .tl-container::after{right:-5.5px;}
   .timeLine .tl-right::after{left:-9.5px;}
-  h1{font-size:48px; margin-bottom:2rem;}
+  h1{font-size:50px; margin-bottom:2rem;}
   h2{font-size:30px;}
   .small-title{font-size:30px; margin-bottom:34px;}
   .heroSection .heroThumb{width:18rem; bottom:-10rem; left:11rem;}
   .aboutText{padding-left:10rem;}
-  .heroText h1{padding-left:10rem;}
+  .heroText h1{}
+  .heroSection .heroText {
+
+    padding-left: 26%;
+  }
 }
