@@ -10,6 +10,8 @@
 		{ label: "Home Valuation", href: "/valuation" },
 		{ label: "Concierge Services", href: "/concierge" },
 		{ label: "Properties", href: "/properties" },
+		{ label: "Blog", href: "/blog" },
+		{ label: "Contact", href: "/contact" },
 
 	
 	]; 

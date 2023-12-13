@@ -18,7 +18,7 @@
 	import LoginMenu from "$lib/components/LoginMenu.svelte";
 
 
-	import heroThumb from "$lib/img/heroThumb.webp";
+	import heroThumb from "$lib/img/doorPurple.webp";
 
 	import rendering from "$lib/img/building-vector.svg";
 	import homeContactBg from "$lib/img/homeContact.jpg";
