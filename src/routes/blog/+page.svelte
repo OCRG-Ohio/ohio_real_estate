@@ -78,7 +78,7 @@ initOrReset();
 </WebsiteHeader>
 
 
-<div class="max-w-[1480px] mx-auto px-5 sm:px-8 mt-20 md:mt-24 lg:mt-40">
+<div class="max-w-[1480px] mx-auto px-5 sm:px-8 my-20 md:my-24 lg:my-40">
 	<h1 class="text-3xl sm:text-6xl sm:leading-tight max-w-screen-xl font-normal">
 		<PlainText bind:content={title} />
 		
