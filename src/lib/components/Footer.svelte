@@ -7,13 +7,11 @@
   import logo2 from '$lib/img/Equal.svg';
   const navigation = [
 		{ label: "About", href: "/about" },
-		{ label: "Home Valuation", href: "/valuation" },
+		{ label: "Property Valuation", href: "/valuation" },
 		{ label: "Concierge Services", href: "/concierge" },
 		{ label: "Properties", href: "/properties" },
 		{ label: "Blog", href: "/blog" },
-		{ label: "Contact", href: "/contact" },
-
-	
+		{ label: "Contact", href: "/contact" },	
 	]; 
 </script>
 

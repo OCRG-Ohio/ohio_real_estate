@@ -37,6 +37,9 @@
   let title,
     aboutUs, 
     aboutUs2,
+    serviceBox1,
+    serviceBox2,
+    serviceBox3,
     showUserMenu;
 
   function initOrReset() {
@@ -44,6 +47,9 @@
     title = data.page?.title || 'We do it smart,';
     aboutUs = data.page?.aboutUs || 'Lorem Ipsum';
     aboutUs2 = data.page?.aboutUs2 || 'Lorem Ipsum2';
+    serviceBox1 = data.page?.serviceBox1 || '<h2 >Property Search</h2><p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>'
+    serviceBox2 = data.page?.serviceBox2 || '<h2 >Property Valuation</h2><p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>';
+    serviceBox3 = data.page?.serviceBox3 || '<h2 >Concerage Services</h2><p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>';
     $isEditing = false;
   }
 
@@ -65,7 +71,10 @@
           page: {
             title,
             aboutUs,
-            aboutUs2,          
+            aboutUs2,
+            serviceBox1,
+            serviceBox2,
+            serviceBox3,         
           }
         });
       }
@@ -136,49 +145,23 @@ swiperEl.initialize();
   <LoginMenu />
 </WebsiteHeader>
 
-<!-- <div class="container-fluid heroSection p-0 flex items-center h-[50vh] md:h-screen" style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
-  <div class="container mx-auto">
-  <div class="heroText relative mt-10 flex flex-col items-start">
-  <h2 class="md:max-w-xl">
-   <PlainText bind:content={title} />
-   </h2>
-    <p>Ohio Concierge Realty Group</p>
-    
-    <a href="home-valuation.html" class="tBtn2">Search Homes 
-    </a>
-  </div>
-  
-</div>
-
-</div> -->
-<!-- End Hero Section -->
-<!-- <div class="container mx-auto">
-	<div class="heroText mt-28 lg:max-w-2xl">
-		<h1 class="">
-			<PlainText bind:content={title} />
-		</h1>
-	</div>
-</div> -->
 <div class="container mx-auto block md:hidden mt-20">
   <h1>
     <PlainText bind:content={title} />
   </h1>
 </div>
 <div
-	class="container-fluid heroSection home p-0 flex h-[50vh] md:h-[70vh] xl:h-screen items-center justify-center "
+	class="container-fluid heroSection home p-0 flex h-[50vh] md:h-[70vh] xl:h-screen items-center justify-center bgNormal"
 	style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
 <div class=" grid-cols-12 self-stretch md:grid hidden">
   <div class="heroText col-span-12 md:col-span-6 xl:col-span-5  flex flex-col justify-center items-start md:bg-white md:pl-12 xl:pl-20">
     <h1 class="md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl xl:mr-16 text-primary-700">
       <PlainText bind:content={title} />
     </h1>
-    <a href="/properties" class="tBtn2 tBtn2Alt mt-6">Property Search</a>    
+    <a href="/properties" class="tBtn2 tBtn2Alt mt-6">Property Search</a>   
 
   </div>
-</div>
-    
-  
-	
+</div>    
 </div>
 
   <div class="container-fluid aboutUs" style="background: url({rendering}) top right no-repeat; background-size: contain;">   
@@ -190,6 +173,7 @@ swiperEl.initialize();
     </div>
   </div>
 </div>
+<NotEditable>
   <div class="container-fluid ohioSlider homeSlider listingsSec img-100 py-12 md:py-20 lg:py-28 2xl:py-32 bg-accent md:px-16" >
     <div class="container mx-auto">
       <div class="aboutSlideHeader">
@@ -294,6 +278,8 @@ swiperEl.initialize();
 
     </div>
   </div>
+</NotEditable>
+
 
 
   <!-- ======= Services Section ======= -->
@@ -301,8 +287,8 @@ swiperEl.initialize();
     <div class="container mx-auto" data-aos="fade-up">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 lg:gap-30 xl:gap-44">
         <div class="col-sapn-1 md:col-span-2">
-          <h2 class="small-title">We make it simple</h2>
-          <p>Nunc vel nunc elit. Phasellus dictum elit sit amet sem maximus rutrum. Pellentesque a sem pulvinar, pretium mauris sit amet, faucibus nunc. Nam a tellus sollicitudin enim consequat convallis. Suspendisse sit amet sapien posuere, volutpat quam hendrerit, suscipit tellus.</p>
+          <RichText multiLine bind:content={aboutUs2} />  
+          
         </div>
         <div class="col-sapn-1 md:col-span-1">
           <ul class="max-w-md space-y-1 md:space-y-2  text-gray-800 list-inside">
@@ -338,33 +324,23 @@ swiperEl.initialize();
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-4">
      
-        <div class="rounded-lg shadow p-6 relative isolate border hover:border-primary-700" style="background: url({box1}) top right no-repeat; background-size: contain;">
+        <div class="rounded-lg shadow p-6 relative isolate border hover:border-primary-700  serviceBoxContent" style="background: url({box1}) top right no-repeat; background-size: contain;">
           <ZoomInOutline class="w-7 h-7 mb-3 text-gray-600 dark:text-gray-400" strokeWidth="1"/>
-          <a href="/">
-            <h5 class="mb-2 text-xl lg:text-2xl  tracking-tight text-myBlue dark:text-white">Property Search</h5>
-          </a>
-          <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
-            ut nesciunt dolorem.</p>
+          <RichText multiLine bind:content={serviceBox1} />
             <a href="/properties" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
-        <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow  p-6 isolate" style="background: url({box2}) top right no-repeat; background-size: contain;">
+        <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow  p-6 isolate serviceBoxContent" style="background: url({box2}) top right no-repeat; background-size: contain;">
           <ScaleBalancedOutline class="w-7 h-7 mb-3 text-gray-600 dark:text-gray-400" strokeWidth="1"/>
-          <a href="/">
-            <h5 class="mb-2 text-xl lg:text-2xl tracking-tight text-myBlue dark:text-white">Property Valuation</h5>
-          </a>
-          <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
-            ut nesciunt dolorem.</p>
+          <RichText multiLine bind:content={serviceBox2} />
+
             <a href="/valuation" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
-        <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow p-6 isolate" style="background: url({box3}) top left no-repeat; background-size: contain;">
+        <div class="text-gray-600  rounded-lg border hover:border-primary-700 shadow p-6 isolate serviceBoxContent" style="background: url({box3}) top left no-repeat; background-size: contain;">
           <ShieldCheckOutline class="w-7 h-7 mb-3 text-gray-600 dark:text-gray-400" strokeWidth="1" />
-          <a href="/">
-            <h5 class="mb-2 text-xl lg:text-2xl  tracking-tight text-myBlue dark:text-white">Concerage Services</h5>
-          </a>
-          <p class="mb-3  text-gray-600 dark:text-gray-400">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non
-            ut nesciunt dolorem.</p>
+          <RichText multiLine bind:content={serviceBox3} />
+          
             <a href="/concierge" class="tBtn2 tBtn2Alt mt-6 border-myBlue">Learn More</a>
 
           </div>
@@ -376,8 +352,9 @@ swiperEl.initialize();
   </section><!-- End Services Section -->
 
   <!-- ======= Call To Action Section ======= -->
+  <NotEditable>
     <div
-    class="container-fluid callToAction aboutCta py-20 flex items-center justify-center"
+    class="container-fluid callToAction aboutCta py-20 flex items-center justify-center bgNormal"
     style="background: url({homeCta}) center center no-repeat; background-size: cover; ">
     <div
       class="container mx-auto relative z-10 flex items-center justify-end">
@@ -386,5 +363,7 @@ swiperEl.initialize();
     </div>
   </div>
 
+  </NotEditable>
+ 
 
 

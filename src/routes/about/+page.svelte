@@ -31,11 +31,13 @@
 
 	import toast from "svelte-french-toast";
 	import ContactForm from "$lib/components/ContactForm.svelte";
+	import DropItem from "$lib/components/DropItem.svelte";
+	let activeTab = 1;
 
 	export let data;
 	export let form;
 
-	let title, aboutUs, aboutTeam, ourStory, showUserMenu;
+	let title, aboutUs, aboutTeam, ourStory, drop1,drop2,drop3,drop4, showUserMenu;
 
 	function initOrReset() {
 		$currentUser = data.currentUser;
@@ -43,6 +45,42 @@
 		aboutUs = data.page?.aboutUs || "Lorem Ipsum";
 		aboutTeam = data.page?.aboutTeam || "Lorem Ipsum Team";
 		ourStory = data.page?.ourStory || "Lorem Ipsum Team Story";
+		drop1 = JSON.parse(
+      JSON.stringify(
+        data.page?.drop1 || {
+       
+          title: 'Experties',
+          detail: 'Our team comprises experienced professionals with in-depth knowledge of the commercial, residential, and investment real estate sectors. We stay ahead of market trends, providing our clients with invaluable insights to make informed decisions.'
+        }
+      )
+    );
+		drop2 = JSON.parse(
+      JSON.stringify(
+        data.page?.drop2 || {
+       
+          title: 'Global Reach',
+          detail: 'Our team comprises experienced professionals with in-depth knowledge of the commercial, residential, and investment real estate sectors. We stay ahead of market trends, providing our clients with invaluable insights to make informed decisions.'
+        }
+      )
+    );
+		drop3 = JSON.parse(
+      JSON.stringify(
+        data.page?.drop3 || {
+       
+          title: 'Personalized Service',
+          detail: 'Our team comprises experienced professionals with in-depth knowledge of the commercial, residential, and investment real estate sectors. We stay ahead of market trends, providing our clients with invaluable insights to make informed decisions.'
+        }
+      )
+    );
+		drop4 = JSON.parse(
+      JSON.stringify(
+        data.page?.drop4 || {
+       
+          title: 'Our Commitment',
+          detail: 'Our team comprises experienced professionals with in-depth knowledge of the commercial, residential, and investment real estate sectors. We stay ahead of market trends, providing our clients with invaluable insights to make informed decisions.'
+        }
+      )
+    );
 		$isEditing = false;
 	}
 
@@ -65,7 +103,11 @@
 						title,
 						aboutUs,
 						aboutTeam,
-						ourStory
+						ourStory,
+						drop1,
+						drop2,
+						drop3,
+						drop4,
 					}
 				});
 			}
@@ -125,40 +167,13 @@
 			class="shadow-md"
 			activeClass="text-sm bg-primary-700 text-white focus:ring-0 text-lg font-light m-0"
 			inactiveClass="font-light bg-white text-lg font-light m-o  hover:bg-white">
-			<AccordionItem open>
-				<span slot="header">Expertise</span>
-				<p class="mb-2 text-dark">
-					Our team comprises experienced professionals with in-depth knowledge of the commercial,
-					residential, and investment real estate sectors. We stay ahead of market trends, providing
-					our clients with invaluable insights to make informed decisions.
-				</p>
-			</AccordionItem>
-			<AccordionItem>
-				<span slot="header">Global Reach</span>
-				<p class="mb-2 text-dark">
-					At Ohio Concierge Realty Group caters to clients both within the country and worldwide.
-					Whether you are a local buyer or seller, a global investor, or a business seeking to buy
-					or sell commercial properties, we have the expertise to guide you.
-				</p>
-			</AccordionItem>
-			<AccordionItem>
-				<span slot="header">Personalized Service</span>
-				<p class="mb-2 text-dark">
-					We understand that no two clients are the same. That's why we take the time to understand
-					your unique objectives and tailor our services to meet your needs. Cutting-Edge
-					Technology: Ohio Concierge Realty Group leverages the latest technology and data analytics
-					to streamline the real estate process, making it more efficient and convenient for you.
-				</p>
-			</AccordionItem>
-			<AccordionItem>
-				<span slot="header">Our Commitment</span>
-				<p class="mb-2 text-dark">
-					Our core values of integrity, transparency, professionalism, and a dedication to client
-					success guide everything we do. Whether you're searching for the perfect home, seeking to
-					make a sound investment, or require assistance with commercial real estate, Ohio Concierge
-					Realty Group, is your trusted partner from start to finish.
-				</p>
-			</AccordionItem>
+		<DropItem bind:drop={drop1} open={activeTab === 1}/>
+		<DropItem bind:drop={drop2} open={activeTab === 2}/>
+		<DropItem bind:drop={drop3} open={activeTab === 3}/>
+		<DropItem bind:drop={drop4} open={activeTab === 4}/>
+		
+
+			
 		</Accordion>
 	</div>
 </div>

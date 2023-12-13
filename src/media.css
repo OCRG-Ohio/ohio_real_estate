@@ -43,6 +43,16 @@
   .heroSection:after{width:100px;}
   .aboutPage .teamSec .flexItem{width:40%;}
   .aboutPage .teamSec .flexItem.bg-accent{min-height:304px;}
+
+  .serviceBoxContent h2 {
+    font-size: 22px; 
+  /* Adjust font size for larger screens */
+  }
+
+  .serviceBoxContent p {
+    font-size: 1.2rem; 
+    margin-top:1.2rem;/* Adjust font size for larger screens */
+  }
 }
 /* Large Devices (lg) - 1024px and up */
 
@@ -139,4 +149,9 @@
 
     padding-left: 26%;
   }
+}
+
+
+@media (max-width:640px){
+  .bgNormal{background-attachment:initial !important;}
 }
