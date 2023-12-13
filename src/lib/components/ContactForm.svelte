@@ -65,7 +65,7 @@
   };
 </script>
 
-<Card class="mt-6 rounded isolate w-[360px] p-6" >
+<Card class="mt-6 rounded isolate w-[360px] p-8 sm:p-10" >
   <div class="">
     <h2 class="small-title text-primary-700">Get in touch.</h2>
     <form on:submit={handleSubmit} class="flex flex-col space-y-6">

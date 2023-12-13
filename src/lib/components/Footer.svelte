@@ -28,9 +28,9 @@
           <a href=""><img class="h-10" src={logo2} alt=""></a>
         </div>
 <div class="contact my-8">
-  <a class="text-white text-base"  href="#">Contact Us +1 123 456 7890 </a>
-  <p class="text-white text-base mt-0" >123 Main Street Columbus, OH 43215 USA</p> 
-  <a class="text-white text-base"  href="#">loremipsum@mail.com</a>  
+  <a class="text-white text-sm md:text-base"  href="#">Contact Us +1 123 456 7890 </a>
+  <p class="text-white text-sm md:text-base mt-0" >123 Main Street Columbus, OH 43215 USA</p> 
+  <a class="text-white text-sm md:text-base"  href="#">loremipsum@mail.com</a>  
 </div>
          
         <ul class="flex flex-wrap justify-center items-center py-2 mb-8 text-white ">
