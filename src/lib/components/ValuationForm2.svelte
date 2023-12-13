@@ -7,7 +7,7 @@
 export let mytab;
 import PlainText from './PlainText.svelte';
   import RichText from './RichText.svelte'; 
-  
+  const formSubject = "Property Evaluation Form";
 
     let activeTab = 1;
 let form = {
@@ -68,7 +68,7 @@ const handleSubmit = async (event) => {
     try {
         const formData = new FormData();
         Object.entries(form).forEach(([key, value]) => formData.append(key, value));
-
+        formData.append('formSubject', formSubject);
         const response = await fetch("/api/sendEmail", {
             method: "POST",
             body: formData,

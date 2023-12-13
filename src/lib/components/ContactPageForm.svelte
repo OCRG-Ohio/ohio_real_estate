@@ -1,6 +1,6 @@
 <script>
 	import { z } from "zod";
-
+	const formSubject = "Contact Page Form";
 	const contactFormSchema = z.object({
 		email: z.string().email("Please enter a valid email address"),
 		name: z.string().min(1, "Please enter full name"),
@@ -47,6 +47,7 @@
 			formData.append("name", form.name);
 			formData.append("phone", form.phone);
 			formData.append("body", form.body);
+			formData.append("formSubject", formSubject);
 
 			const response = await fetch("/api/sendEmail", {
 				method: "POST",

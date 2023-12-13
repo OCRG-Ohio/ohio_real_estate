@@ -2,6 +2,9 @@
   import { z } from "zod";
   import { Card, Input, Textarea } from "flowbite-svelte";
 
+  const formSubject = "General Enquiry Form";
+
+
   const contactFormSchema = z.object({
     email: z.string().email("Please enter a valid email address"),
     name: z.string().min(1, "Please enter a full name"),
@@ -44,6 +47,7 @@
       formData.append("email", form.email);
       formData.append("name", form.name);
       formData.append("body", form.body);
+      formData.append("formSubject", formSubject);
 
       const response = await fetch("/api/sendEmail", {
         method: "POST",
@@ -90,17 +94,14 @@
         {:else}
           Submit
         {/if}
-      </button>
-
-        
+      </button>       
    
         {#if successMessage}
           <p class="success">{successMessage}</p>
         {/if}
         {#if errorMessage}
           <p class="error">{errorMessage}</p>
-        {/if}
-  
+        {/if}  
       
       </form>
     </div>
