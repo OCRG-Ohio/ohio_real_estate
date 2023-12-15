@@ -140,7 +140,7 @@
 	</div>
 </div>
 <div
-	class="container-fluid heroSection about p-0 flex items-end h-[400px] md:h-[420px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px]"
+	class="container-fluid heroSection bgNormal about p-0 flex items-end h-[400px] md:h-[420px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px]"
 	style="background: url({ohio_1}) top center no-repeat; background-size: cover;background-attachment: fixed;">
 	<div class="heroThumb border-8 border-white shadow-md">
 		<img src={heroThumb} alt="" />
