@@ -4,7 +4,7 @@ import { SHORTCUTS } from './constants';
 import { nanoid } from '$lib/util';
 // import { DB_PATH, ADMIN_PASSWORD } from '$env/static/private';
 import { Blob } from 'node:buffer';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/edge';
 
 // Initialize PrismaClient
 const prisma = new PrismaClient();
@@ -20,8 +20,7 @@ import {supabase} from "$lib/server/supabase"
 /**
  * Creates a new article
  */
-export async function createArticle(title, content, teaser, featuredImage, currentUser) {
-  if (!currentUser) throw new Error('Not authorized');
+export async function createArticle(title, content, teaser, featuredImage) {
 
   let slug = slugify(title, {
     lower: true,
@@ -56,8 +55,7 @@ export async function createArticle(title, content, teaser, featuredImage, curre
 /**
  * We automatically extract a teaser text from the document's content.
  */
-export async function updateArticle(slug, title, content, teaser, featuredImage, currentUser) {
-  if (!currentUser) throw new Error('Not authorized');
+export async function updateArticle(slug, title, content, teaser, featuredImage) {
 
   const updatedArticle = await prisma.article.update({
     where: { slug },
@@ -87,21 +85,16 @@ export async function updateArticle(slug, title, content, teaser, featuredImage,
 /**
  * List all available articles (newest first)
  */
-export async function getArticles(currentUser) {
+export async function getArticles() {
   let articles;
 
-  if (currentUser) {
-    // When logged in, show both drafts and published articles
-    articles = await prisma.article.findMany({
-      orderBy: { modified_at: 'desc' },
-      select: { slug: true, title: true, content: true, teaser: true, featuredImage:true, published_at: true, updated_at: true, created_at: true },
-    });
-  } else {
+ {
     articles = await prisma.article.findMany({
       where: { published_at: { not: null } },
       orderBy: { published_at: 'desc' },
       select: { slug: true, title: true, content: true, teaser: true,featuredImage:true, published_at: true, updated_at: true, created_at: true },
     });
+    cacheStrategy: { ttl: 60 }
   }
 
   return articles;
@@ -149,18 +142,10 @@ return result.slice(0, 3);
 /**
  * Search within all searchable items (including articles and website sections)
  */
-export async function search(q, currentUser) {
+export async function search(q) {
   let articles;
 
-  if (currentUser) {
-    articles = await prisma.article.findMany({
-      where: {
-        title: { contains: q, mode: 'insensitive' },
-      },
-      orderBy: { modified_at: 'desc' },
-      select: { slug: true, title: true, published_at: true, updated_at: true, created_at: true },
-    });
-  } else {
+ {
     articles = await prisma.article.findMany({
       where: {
         title: { contains: q, mode: 'insensitive' },
@@ -168,6 +153,7 @@ export async function search(q, currentUser) {
       },
       orderBy: { modified_at: 'desc' },
       select: { slug: true, title: true, published_at: true, updated_at: true, created_at: true },
+      cacheStrategy: { ttl: 60 }
     });
   }
 
@@ -201,8 +187,7 @@ export async function getArticleBySlug(slug) {
 /**
  * Remove the entire article
  */
-export async function deleteArticle(slug, currentUser) {
-  if (!currentUser) throw new Error('Not authorized');
+export async function deleteArticle(slug) {
 
   const result = await prisma.article.delete({
     where: { slug },

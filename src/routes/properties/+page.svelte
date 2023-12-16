@@ -19,11 +19,9 @@
 	let title, aboutUs, aboutTeam, ourStory, showUserMenu;
 
 	function initOrReset() {
-		$currentUser = data.currentUser;
-		title = data.page?.title || "We do it smart,";
-		aboutUs = data.page?.aboutUs || "Lorem Ipsum";
-		aboutTeam = data.page?.aboutTeam || "Lorem Ipsum Team";
-		ourStory = data.page?.ourStory || "Lorem Ipsum Team Story";
+		$currentUser 
+		title = data.page?.title || "Search Homes";
+		
 		$isEditing = false;
 	}
 
@@ -41,12 +39,9 @@
 			// Only persist the start page when logged in as an admin
 			if ($currentUser) {
 				await fetchJSON("POST", "/api/save-page", {
-					pageId: "about",
+					pageId: "properties",
 					page: {
-						title,
-						aboutUs,
-						aboutTeam,
-						ourStory
+						title,				
 					}
 				});
 			}

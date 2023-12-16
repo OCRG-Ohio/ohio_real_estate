@@ -36,7 +36,7 @@
 	let title, aboutUs, showUserMenu,  introStep1, introStep2, introStep3, introStep4, introStep5, tab1,tab2,tab3,tab4;
 
 	function initOrReset() {
-		$currentUser = data.currentUser;
+		$currentUser
 		title = data.page?.title || "In consequat porttitor nisl at hendrerit Maecenas";
 		aboutUs = data.page?.aboutUs || "Concierge";
 		tab1 =	data.page?.tab || "Tab1 Content";

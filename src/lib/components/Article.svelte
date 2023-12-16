@@ -1,6 +1,7 @@
 <script>
 	import PlainText from "$lib/components/PlainText.svelte";
 	import RichText from "$lib/components/RichText.svelte";
+	import PlaceHolder from "$lib/img/placeHolder.jpg";
 	import { formatDate } from "$lib/util";
 	export let title;
 	export let content;
@@ -10,6 +11,7 @@
 	import Image from "$lib/components/Image.svelte";
 	import uploadAsset from "$lib/uploadAsset";
 	import { currentUser, isEditing } from "$lib/stores";
+	import { ImagePlaceholder,Label, Fileupload } from 'flowbite-svelte';
 	let isLoadingImage = false;
     let isUploading = false;
     let uploadProgress = 0;
@@ -90,18 +92,20 @@
 				<a class="text-sm font-medium heading-color" href="../author/brook.html">Brook Jerald</a>
 			</div>
 		</div>
-        {#if $isEditing}
-        <input type="file" on:change={handleImageUpload} />
-      {/if}
-        {#if isUploading || isLoadingImage}
-        <Progressbar progress={uploadProgress} />
-      {/if}
-      
-      {#if featuredImage && !isLoadingImage}
-        <div class="block relative pt-0 bg-black/5 dark:bg-white/5 mt-12">
-          <Image alt="Post thumbnail" bind:src={featuredImage} />
-        </div>
-      {/if}
+		<div class="relative">
+			{#if isUploading || isLoadingImage}
+				<ImagePlaceholder class="my-8 h-[192px] w-full" />
+			{:else if featuredImage}
+				<div class="absolute inset-0 w-full h-full" style="background: url({featuredImage}) no-repeat center center; background-size: cover;"></div>
+				<Image alt="Post thumbnail" src={PlaceHolder} />
+			{:else}
+				<Image alt="Post thumbnail" src={PlaceHolder} />
+			{/if}
+		</div>
+		{#if $isEditing}
+			<Fileupload on:change={handleImageUpload} />
+		{/if}
+		
 		<div
 			class="prose sm:prose-lg max-w-none dark:prose-invert prose-figcaption:text-sm prose-figcaption:text-center prose-figcaption:mt-2 mt-16"
 			id="article_content">

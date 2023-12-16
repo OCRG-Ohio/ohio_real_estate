@@ -28,7 +28,7 @@
 
 
 function initOrReset() {
-	$currentUser = data.currentUser;
+	$currentUser 
 	title = data.page?.title || "<b> This is Kelli.</b> A blog that covers productivity, tips, inspiration, and strategies for massive profits.";
 	aboutUs = data.page?.aboutUs || "Lorem Ipsum";	
 	$isEditing = false;

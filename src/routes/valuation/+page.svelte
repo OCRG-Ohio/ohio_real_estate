@@ -40,7 +40,7 @@
 	let valTab, showUserMenu;
 
 	function initOrReset() {
-		$currentUser = data.currentUser;
+		$currentUser
 		
 		valTab= JSON.parse(
       JSON.stringify(

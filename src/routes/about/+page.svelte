@@ -40,7 +40,7 @@
 	let title, aboutUs, aboutTeam, ourStory, drop1,drop2,drop3,drop4, showUserMenu;
 
 	function initOrReset() {
-		$currentUser = data.currentUser;
+		$currentUser
 		title = data.page?.title || "We do it smart,";
 		aboutUs = data.page?.aboutUs || "Lorem Ipsum";
 		aboutTeam = data.page?.aboutTeam || "Lorem Ipsum Team";

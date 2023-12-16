@@ -1,9 +1,9 @@
 import { error, fail, redirect } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
 import { setError, superValidate } from "sveltekit-superforms/server";
-import { emailSchema, passwordSchema, profileSchema } from "$lib/schemas";
+import { emailSchema, passwordSchema } from "$lib/schemas";
 // import {prisma} from "$lib/server/prisma"
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/edge';
 
 const prisma = new PrismaClient();
 

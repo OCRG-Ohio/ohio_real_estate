@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/edge';
 import { CONNECTION_POOL_URL } from '$env/static/private';
 
 let prisma: PrismaClient;
