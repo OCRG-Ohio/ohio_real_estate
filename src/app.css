@@ -701,12 +701,11 @@ footer .footer-legal ul li img{width:60px; filter:invert(1);}
 .propertiesPage .slidecontainer{margin-top:32px;}
 .propertiesPage .slidecontainer h1{font-weight:600; line-height:16px; font-size:16px; text-transform:uppercase; color: var(--myBlue);}
 .listingsSec{}
-.listingsSec .d-flex{gap:15px; flex-wrap:wrap;}
-.listingsSec .d-flex .flexItem{width:calc(33.33% - 10px);}
-.listingsSec .d-flex .flexItem .listingsImage{position:relative; overflow:hidden;}
-.listingsSec .listingsBox{border-radius:0; overflow:hidden; /* background:#2b2e3b; */position:relative;margin-bottom:0;}
-.listingsSec .listingType {
-	/* padding: 12px 16px; */
+ .d-flex{gap:15px; flex-wrap:wrap;}
+ .d-flex .flexItem{width:calc(33.33% - 10px);}
+ .d-flex .flexItem .listingsImage{position:relative; overflow:hidden;}
+ .listingsBox{border-radius:0; overflow:hidden; /* background:#2b2e3b; */position:relative;margin-bottom:0;}
+ .listingType {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -723,11 +722,16 @@ footer .footer-legal ul li img{width:60px; filter:invert(1);}
 	left: 6px;
 	line-height: 12px;
 }
-.listingsSec .listingContent{  text-align:left;  position:relative;padding:1rem; background:#ffffff;}
-.listingsSec .listingContent .price{font-size:20px; line-height:26px;  letter-spacing:0.33;color:theme(colors.myBlue);}
-.listingsSec .listingContent p{margin:0; font-weight:400; font-size:14px; line-height:16px; margin:12px 0 0 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
-.listingsSec .listingContent .listingInfo{font-size:14px; font-weight:normal; display:flex; gap:6px; margin-top:4px;}
-.listingsSec .listingContent .listingInfo span{display:block; line-height:1.4; text-transform:uppercase;}
+
+.listingContent{  text-align:left;  position:relative;padding:1rem; background:#ffffff;}
+
+.listingContent .price{font-size:20px; line-height:26px;  letter-spacing:0.33;color:theme(colors.myBlue);}
+
+.listingContent p{margin:0; font-weight:400; font-size:14px; line-height:16px; margin:12px 0 0 0; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+
+.listingContent .listingInfo{font-size:14px; font-weight:normal; display:flex; gap:6px; margin-top:4px;}
+
+.listingContent .listingInfo span{display:block; line-height:1.4; text-transform:uppercase;}
 .propertiesPage .listingsHeading {
   text-transform: none;
   margin: 0 0 45px;

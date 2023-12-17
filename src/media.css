@@ -95,13 +95,17 @@
   h2{font-size:28px;}
   .small-title{font-size:28px; margin-bottom:30px;}
   .heroSection::after {
-    width: 25%;
+    width: 15%;
   }
   .aboutUs::after {
 
     width: 25%;
 
   }
+  .heroSection.home::after {
+    width: 23%;
+  }
+
   .heroSection .heroThumb{width:12rem; bottom:-4rem; left:5rem;}
   .heroText h1{}
   .aboutText{padding-left:4rem;}
@@ -124,6 +128,9 @@
 /* 2 Extra Large Devices (2xl) - 1536px and up */
 
 @media (min-width:1536px){
+  .heroSection::after {
+    width: 20%;
+  }
   body {
 
     font-size: 18px;
@@ -142,7 +149,7 @@
   h1{font-size:50px; margin-bottom:2rem;}
   h2{font-size:30px;}
   .small-title{font-size:30px; margin-bottom:34px;}
-  .heroSection .heroThumb{width:18rem; bottom:-10rem; left:11rem;}
+  .heroSection .heroThumb{width:18rem; bottom:-10rem; left:14rem;}
   .aboutText{padding-left:10rem;}
   .heroText h1{}
   .heroSection .heroText {

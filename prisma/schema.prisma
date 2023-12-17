@@ -8,6 +8,7 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("CONNECTION_POOL_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 
@@ -45,5 +46,19 @@ model Article {
   created_at  DateTime @default(now())
   published_at DateTime?
   updated_at  DateTime?
+}
+
+model Property {
+  id            Int   @id @default(autoincrement())  
+  title         String    // Made non-nullable
+  address       String    // Made non-nullable
+  city_state    String?
+  price         Float?    // Changed to Float for numerical operations
+  beds          Int
+  baths         Int
+  area          Int
+  type          String[]
+  created_at    DateTime  @default(now())
+  updated_at    DateTime?
 }
 
