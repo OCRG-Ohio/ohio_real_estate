@@ -21,28 +21,33 @@ export const load: PageServerLoad = async ({ params }) => {
 }
 export const actions: Actions = {
 	updateArticle: async ({ request, params }) => {
-		const { title, address } = Object.fromEntries(await request.formData()) as {
-			title: string
-			address: string
-		}
-
+		
+		const formData = await request.formData();
+		const selectedTypes = formData.getAll('type');
+		const property = {
+		  title: formData.get('title'),
+		  address: formData.get('address'),
+		  city_state: formData.get('city_state'),
+		  price: Number(formData.get('price')),
+		  beds: Number(formData.get('beds')),
+		  baths: Number(formData.get('baths')),
+		  area: Number(formData.get('area')),
+		  type: selectedTypes,
+		};
+		console.log("Property Object:", property);
+	
 		try {
-			await prisma.property.update({
+			const result = await prisma.property.update({ 
 				where: {
 					id: Number(params.id),
 				},
-				data: {
-					title,
-					address,
-				},
-			})
-		} catch (err) {
-			console.error(err)
-			return fail(500, { message: "Could not update property" })
-		}
-
-		return {
-			status: 200,
-		}
+				data:property
+			 });
+			console.log("Insertion Result:", result);
+		  // Optionally return some data or redirect
+		} catch (error) {
+			console.error("Error in addProperty action:", error);
+	  
+		  }
 	},
 }

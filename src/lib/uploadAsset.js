@@ -27,7 +27,7 @@ function upload(file, path, progressCallback) {
     xhr.send(formData);
   });
 }
-const supabaseStorageURL = "https://yplejatygdmrnsaocsfk.supabase.co/storage/v1/object/public/quill_files/kelli";
+const supabaseStorageURL = "https://zuotacmwldtsgmgzthxo.supabase.co/storage/v1/object/public/kelli";
 
 export default async function uploadAsset(file, path, onProgress) {
   const response = await upload(file, path, onProgress);

@@ -121,15 +121,13 @@
 					<TableBodyCell tdClass="px-4 py-3">{item.type}</TableBodyCell>
 					<TableBodyCell tdClass="px-4 py-3">{item.price}</TableBodyCell>
 					<TableBodyCell tdClass="px-4 py-3">
-						<Button>Dropdown button<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 4">
+						<Button class="bg-transparent hover:bg-transparent"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 4">
 							<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M2.49 2h.01m6 0h.01m5.99 0h.01"/>
 						  </svg></Button>
-<Dropdown>
-  <DropdownItem>Dashboard</DropdownItem>
-  <DropdownItem>Settings</DropdownItem>
-  <DropdownItem>Earnings</DropdownItem>
-  <DropdownItem>Sign out</DropdownItem>
-</Dropdown>
+	<Dropdown>
+	<DropdownItem href="/contacts/{item.id}">Edit</DropdownItem>
+	<DropdownItem>Delete</DropdownItem>
+	</Dropdown>
 					</TableBodyCell>
 				</TableBodyRow>
 			  {/each}
@@ -145,7 +143,7 @@
 						<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M2.49 2h.01m6 0h.01m5.99 0h.01"/>
 					  </svg></Button>
 <Dropdown>
-<DropdownItem href="/{item.id}">Edit</DropdownItem>
+<DropdownItem href="/contacts/{item.id}">Edit</DropdownItem>
 <DropdownItem>Delete</DropdownItem>
 </Dropdown>
 				</TableBodyCell>

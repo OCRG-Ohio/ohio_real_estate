@@ -53,6 +53,14 @@
     font-size: 1.2rem; 
     margin-top:1.2rem;/* Adjust font size for larger screens */
   }
+  .serviceBoxContent .absText {
+    position: absolute;
+    bottom: 16px;
+    left: 10px;
+}
+.serviceBoxContent h2 {
+  font-size: 18px;
+}
 }
 /* Large Devices (lg) - 1024px and up */
 
@@ -64,7 +72,7 @@
   }
   .heroSection .heroText {
    
-      background-color: rgb(255 255 255 / 0.7);
+      background-color: transparent;
  
   }
 
@@ -103,7 +111,7 @@
 
   }
   .heroSection.home::after {
-    width: 23%;
+    width: 45%;
   }
 
   .heroSection .heroThumb{width:12rem; bottom:-4rem; left:5rem;}

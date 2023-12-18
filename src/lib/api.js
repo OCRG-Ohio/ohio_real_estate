@@ -280,7 +280,7 @@ export async function storeAsset(asset_id, file) {
   const buffer = Buffer.from(arrayBuffer);
 
   // Upload the file to the Supabase bucket
-  const { data, error } = await supabase.storage.from('quill_files').upload(`kelli/${asset_id}`, buffer, {
+  const { data, error } = await supabase.storage.from('kelli').upload(`/${asset_id}`, buffer, {
       metadata: {
         mime_type: file.type,
         size: file.size,
@@ -323,7 +323,7 @@ export async function getAsset(asset_id) {
   }
 
   const filename = asset.asset_id.split('/').pop(); // More reliable way to get the last part
-  const supabaseStorageURL = "https://yplejatygdmrnsaocsfk.supabase.co/storage/v1/object/public/quill_files/kelli";
+  const supabaseStorageURL = "https://zuotacmwldtsgmgzthxo.supabase.co/storage/v1/object/public/kelli";
 
   return {
     filename,

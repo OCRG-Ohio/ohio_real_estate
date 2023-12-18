@@ -24,7 +24,7 @@
 			isLoadingImage = true; // Indicates that image loading is in progress
 
 			try {
-				featuredImage = await uploadAsset(file, file.name, (progress) => {
+				featuredImage = await uploadAsset(file, blog, (progress) => {
 					uploadProgress = progress; // Update progress here
 				});
 
