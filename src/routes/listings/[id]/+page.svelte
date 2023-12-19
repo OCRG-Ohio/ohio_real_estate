@@ -2,7 +2,15 @@
 	import type { PageData } from '../[id]/$types'
 	import { Section } from 'flowbite-svelte-blocks';
     import { Label, Input, Button, Select, Textarea } from 'flowbite-svelte';
-
+	import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
+    
+	let textareaprops = {
+    id: 'content',
+    name: 'content',
+    label: 'Property Detail',
+    rows: 4,
+    placeholder: 'Enter Property Highlights...'
+  };
 	let selectedTypes = [];
     let types = [ { value: 'tv', name: 'TV/Monitors' },
     { value: 'pc', name: 'PC' },
@@ -19,9 +27,13 @@
 	<textarea id="address" name="address" rows={5} value={property.address} />
 	<button type="submit">Update Article</button>
 </form> -->
+<WebsiteHeader class="bg-white">
+	<PrimaryButton on:click={toggleEdit}>Edit page</PrimaryButton>
+	<LoginMenu />
+</WebsiteHeader>
 
-<Section name="crudcreateform">
-	<h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a New Property</h2>
+<Section name="crudcreateform" >
+	<h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white mt-16">Edit Property</h2>
 	<form action="?/updateArticle" method="POST">
 	  <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 		<!-- Title Field -->
@@ -29,15 +41,18 @@
 		  <Label for="title" class="mb-2">Title</Label>
 		  <Input type="text" id="title" name="title" placeholder="Property title" required  value={property.title}/>
 		</div>
+		<div class="sm:col-span-2">
+			<Textarea {...textareaprops} value={property.content}/>
+		</div>
 		
 		<!-- Address Field -->
-		<div class="sm:col-span-2">
+		<div class="w-full">
 		  <Label for="address" class="mb-2">Address</Label>
 		  <Input type="text" id="address" name="address" placeholder="Property address" required value={property.address}/>
 		</div>
 		
 		<!-- City and State Field -->
-		<div class="sm:col-span-2">
+		<div class="w-full">
 		  <Label for="city_state" class="mb-2">City and State</Label>
 		  <Input type="text" id="city_state" name="city_state" placeholder="City and State" required value={property.city_state}/>
 		</div>
@@ -79,7 +94,9 @@
 		</div> -->
   
 		<!-- Submit Button -->
-		<Button type="submit" class="w-40">Add Property</Button>
+		<Button type="submit" class="w-40">Update</Button>
 	  </div>
 	</form>
+
+	<img src={property.featuredImageUrl} alt="">
   </Section>

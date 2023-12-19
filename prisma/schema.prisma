@@ -49,17 +49,31 @@ model Article {
 }
 
 model Property {
-  id            Int   @id @default(autoincrement())  
-  title         String    // Made non-nullable
-  address       String    // Made non-nullable
+  id            Int      @id @default(autoincrement())  
+  title         String
+  content        String?
+  address       String
   city_state    String?
-  price         Float?    // Changed to Float for numerical operations
-  beds          Int
-  baths         Int
-  area          Int
+  price         Float?
+  beds          Int?
+  baths         Int?
+  area          Int?
+  category          String?
   type          String[]
-  created_at    DateTime  @default(now())
+  created_at    DateTime @default(now())
   updated_at    DateTime?
-  media  String[]
+  featuredImage String?
+  media        Media[]  // Relation to assets
 }
+model Media {
+  asset_id    Int      @id @default(autoincrement())
+  mime_type   String
+  updated_at  DateTime? @default(now()) @updatedAt
+  size        Int
+  url        String   // Changed to String to store file path or URL
+  propertyId  Int?     // Foreign key to Property
+  property    Property? @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+}
+
+
 

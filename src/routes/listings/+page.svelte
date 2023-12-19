@@ -3,6 +3,7 @@
 	import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, TableSearch, Button, Dropdown, DropdownItem, Checkbox, ButtonGroup } from 'flowbite-svelte';
 	import { Section } from 'flowbite-svelte-blocks';
 	import { goto } from '$app/navigation';
+	import WebsiteHeader from "$lib/components/WebsiteHeader.svelte";
 	
 	import { PlusSolid, ChevronDownSolid, FilterSolid, ChevronRightOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
   
@@ -70,14 +71,17 @@
 	$: filteredItems = data.properties.filter((item) => item.title.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
   </script>
   
-    
+  <WebsiteHeader class="bg-white">
+	<PrimaryButton on:click={toggleEdit}>Edit page</PrimaryButton>
+	<LoginMenu />
+</WebsiteHeader>
 
 
-	<Section classSection='bg-gray-50 dark:bg-gray-900 p-3 sm:p-5'>
+	<Section classSection='bg-gray-50 dark:bg-gray-900 mt-20 p-3 sm:p-5'>
 		<TableSearch placeholder="Search" hoverable={true} bind:inputValue={searchTerm} {divClass} {innerDivClass} {searchClass} {classInput} >
 	
 		<div slot="header" class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-			<Button on:click={() => goto('contacts/new')}>
+			<Button on:click={() => goto('listings/new')}>
 				<PlusSolid class="h-3.5 w-3.5 mr-2" />Add New
 			  </Button>
 		  <Button color='alternative'>Actions<ChevronDownSolid class="w-3 h-3 ml-2 " /></Button>
@@ -87,26 +91,21 @@
 			</Dropdown>
 		  <Button color='alternative'>Filter<FilterSolid class="w-3 h-3 ml-2 " /></Button>
 			<Dropdown class="w-48 p-3 space-y-2 text-sm">
-			  <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
+			  <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose Category</h6>
 			  <li>
-				<Checkbox>Apple (56)</Checkbox>
+				<Checkbox>For Sale</Checkbox>
 			  </li>
 			  <li>
-				<Checkbox>Microsoft (16)</Checkbox>
+				<Checkbox>For Lease</Checkbox>
 			  </li>
-			  <li>
-				<Checkbox>Razor (49)</Checkbox>
-			  </li>
-			  <li>
-				<Checkbox>Nikon (12)</Checkbox>
-			  </li>
+			 
 		
 			</Dropdown>
 		</div>
 		  <TableHead>
-			<TableHeadCell padding="px-4 py-3" scope="col">Product name</TableHeadCell>
-			<TableHeadCell padding="px-4 py-3" scope="col">Brand</TableHeadCell>
-			<TableHeadCell padding="px-4 py-3" scope="col">Category</TableHeadCell>
+			<TableHeadCell padding="px-4 py-3" scope="col">Listing Title</TableHeadCell>
+			<TableHeadCell padding="px-4 py-3" scope="col">Area</TableHeadCell>
+			<TableHeadCell padding="px-4 py-3" scope="col">Type</TableHeadCell>
 			<TableHeadCell padding="px-4 py-3" scope="col">Price</TableHeadCell>
 			<TableHeadCell padding="px-4 py-3" scope="col">
 				<span class="sr-only">Actions</span>
@@ -125,7 +124,7 @@
 							<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M2.49 2h.01m6 0h.01m5.99 0h.01"/>
 						  </svg></Button>
 	<Dropdown>
-	<DropdownItem href="/contacts/{item.id}">Edit</DropdownItem>
+	<DropdownItem href="/listings/{item.id}">Edit</DropdownItem>
 	<DropdownItem>Delete</DropdownItem>
 	</Dropdown>
 					</TableBodyCell>
@@ -143,7 +142,7 @@
 						<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M2.49 2h.01m6 0h.01m5.99 0h.01"/>
 					  </svg></Button>
 <Dropdown>
-<DropdownItem href="/contacts/{item.id}">Edit</DropdownItem>
+<DropdownItem href="/listings/{item.id}">Edit</DropdownItem>
 <DropdownItem>Delete</DropdownItem>
 </Dropdown>
 				</TableBodyCell>

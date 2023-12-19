@@ -100,6 +100,7 @@ gsap.registerPlugin(ScrollTrigger);
         <Button class="bg-transparent dashBtn text-primary-700 p-0 hover:bg-transparent outline-0 focus-within:ring-0">Dashboard<ChevronDownSolid class="w-3 h-3 ml-2 text-primary-700 dark:text-white" /></Button>
         <Dropdown class="p-4">
           <DropdownItem href="/account">Settings</DropdownItem>
+          <DropdownItem href="/listings">Listings</DropdownItem>
           <DropdownItem>
             <button on:click={() => (showUserMenu = !showUserMenu)}>
               Edit Website

@@ -1,24 +1,38 @@
 import { error, type Actions } from '@sveltejs/kit';
 import { PrismaClient } from '@prisma/client/edge';
-import type { PageServerLoad } from '../$types';
-const prisma = new PrismaClient();
-export const load: PageServerLoad = async ({ params }) => {
-	const getArticle = async () => {
-		const property = await prisma.property.findUnique({
-			where: {
-				id: Number(params.id),
-			},
-		})
-		if (!property) {
-			throw error(404, "Article not found")
-		}
-		return property
-	}
+import type { PageServerLoad } from './$types';
 
-	return {
-		property: getArticle(),
-	}
-}
+const prisma = new PrismaClient();
+
+export const load: PageServerLoad = async ({ params }) => {
+    try {
+        const property = await prisma.property.findUnique({
+            where: {
+                id: Number(params.id),
+            },
+            include: {
+                media: true // Include related assets
+            }
+        });
+
+        if (!property) {
+            throw error(404, "Property not found");
+        }
+
+        // Assuming the first asset is the featured image
+        const featuredImageUrl = property.media.length > 0 ? property.media[0].url : null;
+
+        return {
+            property: {
+                ...property,
+                featuredImageUrl: featuredImageUrl
+            },
+        };
+    } catch (err) {
+        throw error(500, "An error occurred while fetching the property");
+    }
+};
+
 export const actions: Actions = {
 	updateArticle: async ({ request, params }) => {
 		
@@ -26,6 +40,7 @@ export const actions: Actions = {
 		const selectedTypes = formData.getAll('type');
 		const property = {
 		  title: formData.get('title'),
+		  content: formData.get('content'),
 		  address: formData.get('address'),
 		  city_state: formData.get('city_state'),
 		  price: Number(formData.get('price')),

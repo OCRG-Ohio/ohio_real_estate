@@ -93,6 +93,7 @@
 		"svelte-progress-bar": "^3.0.2",
 		"swiper": "^11.0.5",
 		"tailwind-merge": "^2.1.0",
-		"tailwind-variants": "^0.1.19"
+		"tailwind-variants": "^0.1.19",
+		"uuid": "^9.0.1"
 	}
 }
