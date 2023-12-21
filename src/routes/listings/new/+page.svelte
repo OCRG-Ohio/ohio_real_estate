@@ -1,6 +1,11 @@
 <script lang="ts">
+	import type { PageData, ActionData } from './$types';
+	
+	
+	
+	export let form: ActionData;
 	import { Section } from "flowbite-svelte-blocks";
-	import { Label, Input, Button, Select, Textarea, Fileupload } from "flowbite-svelte";
+	import { Label, Input, Button, Select, Textarea, Fileupload,Checkbox ,Alert} from "flowbite-svelte";
 	import { enhance } from "$app/forms";
 	import WebsiteHeader from "$lib/components/WebsiteHeader.svelte";
 	let selectedTypes = [];
@@ -15,7 +20,12 @@
 		{ value: "comercial", name: "Commercial" },
 		{ value: "residencial", name: "Residencial" },
 		{ value: "multifamily", name: "Multifamily" }
-	]; // Populate with available types for property
+	];
+	let categories = [
+		{ value: "for_sale", name: "Commercial" },
+		{ value: "residencial", name: "Residencial" },
+		{ value: "multifamily", name: "Multifamily" }
+	];  // Populate with available types for property
 	let media = []; // Populate with available media options
 </script>
 <WebsiteHeader class="bg-white">
@@ -54,7 +64,7 @@
 			<!-- Price Field -->
 			<div class="w-full">
 				<Label for="price" class="mb-2">Price</Label>
-				<Input type="text" id="price" name="price" placeholder="Price" required />
+				<Input type="number" id="price" name="price" placeholder="Price" required />
 			</div>
 
 			<!-- Beds Field -->
@@ -76,9 +86,17 @@
 			</div>
 
 			<!-- Type Field -->
-			<div class="sm:col-span-2">
+			<div class="w-full">
 				<Label for="type" class="mb-2">Type</Label>
 				<Select class="mt-2" items={types} bind:value={selectedTypes} name="type" />
+			</div>
+			<div class="w-full">
+				<Label for="category" class="mb-2">Category</Label>
+<ul class=" bg-white rounded-lg border border-gray-200 flex">
+  <li><Checkbox name="category" value="for_sale" class="p-3">For Sale</Checkbox></li>
+  <li><Checkbox name="category" value="for_lease" class="p-3">For Lease</Checkbox></li>
+
+</ul>
 			</div>
 			<Label for="featuredImage">Featured Image</Label>
 
@@ -87,5 +105,12 @@
 			<Fileupload type="file" id="galleryImages" name="galleryImages" multiple />
 			<Button type="submit" class="w-40">Add Property</Button>
 		</div>
+		{#if form?.success}
+		<Alert color="green">
+			<span class="font-medium">Success alert!</span>	
+
+		  </Alert>
+{/if}
+		
 	</form>
 </Section>

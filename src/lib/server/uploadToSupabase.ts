@@ -1,12 +1,15 @@
 import { supabase } from '$lib/server/supabase'; // Your configured Supabase client
-
+import { v4 as uuidv4 } from 'uuid';
 export async function uploadToSupabase(file) {
     if (!file) return null;
 
-    const fileName = file.name;
-    const uniqueTimeStamp = Date.now();
-    const filePath = `properties/${uniqueTimeStamp}-${fileName}`;
+    const sanitizedFileName = file.name
+        .replace(/[^a-zA-Z0-9_.-]/g, '') // Remove invalid characters
+        .toLowerCase(); // Convert to lower case
 
+    // Append a UUID to ensure uniqueness
+    const uniqueId = uuidv4();
+    const filePath = `properties/${uniqueId}-${sanitizedFileName}`;
     const { error, data } = await supabase.storage.from('kelli').upload(filePath, file);
 
     if (error) {

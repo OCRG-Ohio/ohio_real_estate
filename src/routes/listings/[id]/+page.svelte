@@ -1,8 +1,10 @@
 <script lang="ts">
 	import type { PageData } from '../[id]/$types'
 	import { Section } from 'flowbite-svelte-blocks';
-    import { Label, Input, Button, Select, Textarea } from 'flowbite-svelte';
+    import { Label, Input, Button, Select, Textarea ,Gallery,Checkbox ,Fileupload} from 'flowbite-svelte';
 	import WebsiteHeader from '$lib/components/WebsiteHeader.svelte';
+	import PrimaryButton from '$lib/components/PrimaryButton.svelte';
+	import LoginMenu from '$lib/components/LoginMenu.svelte';
     
 	let textareaprops = {
     id: 'content',
@@ -15,18 +17,29 @@
     let types = [ { value: 'tv', name: 'TV/Monitors' },
     { value: 'pc', name: 'PC' },
     { value: 'phone', name: 'Phones' }];
-	export let data: PageData
-	$: ({ property } = data)
+	export let data: PageData;
+    let property: { media: { asset_id: number; mime_type: string; updated_at: Date | null; size: number; url: string; propertyId: number | null; }[]; } & { id: number; title: string; content: string | null; address: string; city_state: string | null; price: number | null; beds: number | null; baths: number | null; area: number | null; category: string | null; type: string[]; created_at: Date; updated_at: Date | null; featuredImage: string | null; };
+    let images: {
+		alt: string; // Example alt text, you can customize this
+		src: string;
+	}[] = [];
+
+    $: if (data && data.property) {
+        property = data.property;
+        // Transform the media array to the format expected by Gallery
+        images = property.media.map((img, index) => ({
+            alt: `Image ${index + 1}`, // Example alt text, you can customize this
+            src: img.url
+        }));
+    }
+
+
+	function toggleEdit(e: MouseEvent): void {
+		throw new Error('Function not implemented.');
+	}
 </script>
 
-<!-- <form action="?/updateArticle" method="POST">
-	<h3>Editing: {property.title}</h3>
-	<label for="title"> Title </label>
-	<input type="text" id="title" name="title" value={property.title} />
-	<label for="title"> Title </label>
-	<textarea id="address" name="address" rows={5} value={property.address} />
-	<button type="submit">Update Article</button>
-</form> -->
+
 <WebsiteHeader class="bg-white">
 	<PrimaryButton on:click={toggleEdit}>Edit page</PrimaryButton>
 	<LoginMenu />
@@ -82,21 +95,35 @@
 		</div>
   
 		<!-- Type Field -->
-		<div class="sm:col-span-2">
-		  <Label for="type" class="mb-2">Type</Label>
-		  <Select class="mt-2" items={types} bind:value={selectedTypes}  name="type"/>
+		<div class="w-full">
+			<Label for="type" class="mb-2">Type</Label>
+			<Select class="mt-2" items={types} bind:value={selectedTypes} name="type" />
 		</div>
-  
-		<!-- Property Media Field -->
-		<!-- <div class="sm:col-span-2">
-		  <Label for="media" class="mb-2">Property Media</Label>
-		  <Select items={media} name="propertyMedia" multiple required />
-		</div> -->
-  
-		<!-- Submit Button -->
+		<div class="w-full">
+			<Label for="category" class="mb-2">Category</Label>
+<ul class=" bg-white rounded-lg border border-gray-200 flex">
+
+<li><Checkbox name="category" value={property.category} class="p-3">For Sale</Checkbox></li>
+<li><Checkbox name="category" value={property.category} class="p-3">For Lease</Checkbox></li>
+
+</ul>
+		</div>
+		<Label for="featuredImage">Featured Image</Label>
+
+		<Fileupload type="file" id="file" name="featuredImage" required />
+		<Label for="galleryImages">Gallery Images</Label>
+		<Fileupload type="file" id="galleryImages" name="galleryImages" multiple />
 		<Button type="submit" class="w-40">Update</Button>
 	  </div>
 	</form>
-
-	<img src={property.featuredImageUrl} alt="">
+    
+	<Gallery class="gap-6 grid grid-cols-4 mt-8" items={images} let:item>
+		<div class="overflow-hidden w-40 h-40 relative rounded">
+		  <img src={item.src} alt={item.alt} class="object-cover w-full h-full" />
+		  <form action={`?/deleteGalleryImage/${item.asset_id}`} method="POST">
+            <Button type="submit">Delete Image</Button>
+        </form>
+		</div>
+	  </Gallery>
+	<!-- <img src={property.featuredImageUrl} alt=""> -->
   </Section>

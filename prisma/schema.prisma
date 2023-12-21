@@ -58,7 +58,7 @@ model Property {
   beds          Int?
   baths         Int?
   area          Int?
-  category          String?
+  category      String?
   type          String[]
   created_at    DateTime @default(now())
   updated_at    DateTime?
