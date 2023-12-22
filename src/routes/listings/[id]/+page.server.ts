@@ -12,9 +12,7 @@ export const load: PageServerLoad = async ({ params }) => {
             where: {
                 id: Number(params.id),
             },
-            include: {
-                gallery: true // Include related assets
-            }
+            
         });
 
         if (!property) {
@@ -38,19 +36,37 @@ export const actions: Actions = {
 	  const formData = await request.formData();
 	  const propertyId = Number(params.id);
 	  const propertyData = {
-		  title: formData.get('title'),
-		  content: formData.get('content'),
-		  address: formData.get('address'),
-		  city_state: formData.get('city_state'),
-		  price: parseFloat(formData.get('price').toString()),
-		  beds: parseInt(formData.get('beds').toString()),
-		  baths: parseInt(formData.get('baths').toString()),
-		  area: parseInt(formData.get('area').toString()),
-		  type: selectedType,  
-		  category:formData.get('category'),
+		title: formData.get('title'),
+		content: formData.get('content'),
+		address: formData.get('address'),
+		city_state: formData.get('city_state'),
+		price: parseFloat(formData.get('price').toString()),
+		beds: parseInt(formData.get('beds').toString()),
+		baths: parseInt(formData.get('baths').toString()),
+		area: parseInt(formData.get('area').toString()),
+	  
+		category:formData.get('category'),
+		type:formData.get('type'),
 	  };
-  
-	  try {
+
+	  const featuredImageFile = formData.get('featuredImage');
+      let featuredImageUrl = null;
+      if (featuredImageFile) {
+        featuredImageUrl = await uploadToSupabase(featuredImageFile);
+      }
+	  const galleryFiles = formData.getAll('galleryImages');
+	  let galleryUrls = [];
+	  
+	  for (const file of galleryFiles) {
+		if (file instanceof File && file.size > 0) {
+		  const fileUrl = await uploadToSupabase(file);
+		  if (fileUrl) {
+			galleryUrls.push(fileUrl);
+		  } else {
+			console.error("Failed to upload file:", file.name);
+		  }
+		}
+	  }
 		// Update property
 		await prisma.property.update({
 		  where: { id: propertyId },
