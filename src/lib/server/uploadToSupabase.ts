@@ -1,16 +1,21 @@
 import { supabase } from '$lib/server/supabase'; // Your configured Supabase client
 import { v4 as uuidv4 } from 'uuid';
 export async function uploadToSupabase(file) {
-    if (!file) return null;
-
-    const sanitizedFileName = file.name
-        .replace(/[^a-zA-Z0-9_.-]/g, '') // Remove invalid characters
-        .toLowerCase(); // Convert to lower case
-
+    if (!file) {
+        console.log('nothing found')
+        return null;}
+        console.log(file.name)
+    
+        // const sanitizedFileName = file.name.replace(/[^a-zA-Z0-9_.-]/g, '').toLowerCase();
+        // Rest of your code that uses sanitizedFileName
+  
     // Append a UUID to ensure uniqueness
     const uniqueId = uuidv4();
-    const filePath = `properties/${uniqueId}-${sanitizedFileName}`;
-    const { error, data } = await supabase.storage.from('kelli').upload(filePath, file);
+    const filePath = `properties/${uniqueId}`;
+    const { error, data } = await supabase.storage.from('kelli').upload(filePath, file, {
+        cacheControl: "3600",
+        upsert: false,
+      });
 
     if (error) {
         console.error('Error uploading to Supabase:', error);

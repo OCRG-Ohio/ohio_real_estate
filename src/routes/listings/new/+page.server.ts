@@ -22,15 +22,12 @@ export const actions: Actions = {
       beds: parseInt(formData.get('beds').toString()),
       baths: parseInt(formData.get('baths').toString()),
       area: parseInt(formData.get('area').toString()),
-      type: selectedTypes,  
+    
       category:formData.get('category'),
+      type:formData.get('type'),
     
     };
- 
 
-
-
-  
       const featuredImageFile = formData.get('featuredImage');
       let featuredImageUrl = null;
       if (featuredImageFile) {
@@ -60,7 +57,7 @@ export const actions: Actions = {
         });   
       }
  
-       throw redirect(303, `listings/${newProperty.id}`);
+       throw redirect(303, `/${newProperty.id}`);
        return { success: true };
 
   
