@@ -6,6 +6,8 @@
 	import WebsiteHeader from "$lib/components/WebsiteHeader.svelte";
 	
 	import { PlusSolid, ChevronDownSolid, FilterSolid, ChevronRightOutline, ChevronLeftOutline } from 'flowbite-svelte-icons';
+	import LoginMenu from '$lib/components/LoginMenu.svelte';
+	import PrimaryButton from '$lib/components/PrimaryButton.svelte';
   
 	let divClass='bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden';
 	let innerDivClass='flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4';
@@ -81,7 +83,7 @@
 		<TableSearch placeholder="Search" hoverable={true} bind:inputValue={searchTerm} {divClass} {innerDivClass} {searchClass} {classInput} >
 	
 		<div slot="header" class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-			<Button on:click={() => goto('listings/new')}>
+			<Button on:click={() => goto('/listings/new')}>
 				<PlusSolid class="h-3.5 w-3.5 mr-2" />Add New
 			  </Button>
 		  <Button color='alternative'>Actions<ChevronDownSolid class="w-3 h-3 ml-2 " /></Button>
@@ -97,8 +99,7 @@
 			  </li>
 			  <li>
 				<Checkbox>For Lease</Checkbox>
-			  </li>
-			 
+			  </li>	 
 		
 			</Dropdown>
 		</div>

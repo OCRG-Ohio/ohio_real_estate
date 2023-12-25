@@ -59,7 +59,7 @@ model Property {
   baths         Int?
   area          Int?
   category      String?
-  type          String[]
+  type          String?
   created_at    DateTime @default(now())
   updated_at    DateTime?
   featuredImage String?
@@ -70,8 +70,8 @@ model Media {
   mime_type   String
   updated_at  DateTime? @default(now()) @updatedAt
   size        Int
-  url        String   // Changed to String to store file path or URL
-  propertyId  Int?     // Foreign key to Property
+  url        String   
+  propertyId  Int?   
   property    Property? @relation(fields: [propertyId], references: [id], onDelete: Cascade)
 }
 

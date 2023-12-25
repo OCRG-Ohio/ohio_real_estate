@@ -8,6 +8,8 @@
 	import { Label, Input, Button, Select, Textarea, Fileupload,Checkbox ,Alert} from "flowbite-svelte";
 	import { enhance } from "$app/forms";
 	import WebsiteHeader from "$lib/components/WebsiteHeader.svelte";
+	import PrimaryButton from '$lib/components/PrimaryButton.svelte';
+	import LoginMenu from '$lib/components/LoginMenu.svelte';
 	let selectedTypes = [];
 	let textareaprops = {
     id: 'content',
@@ -27,6 +29,13 @@
 		{ value: "multifamily", name: "Multifamily" }
 	];  // Populate with available types for property
 	let media = []; // Populate with available media options
+	let selectedType="";
+
+
+
+	function toggleEdit(e: MouseEvent): void {
+		throw new Error('Function not implemented.');
+	}
 </script>
 <WebsiteHeader class="bg-white">
 	<PrimaryButton on:click={toggleEdit}>Edit page</PrimaryButton>
@@ -42,7 +51,7 @@
 				<Input type="text" id="title" name="title" placeholder="Property title" required />
 			</div>
 			<div class="sm:col-span-2">
-				<Textarea {...textareaprops} />
+				<Textarea {...textareaprops} name="content"/>
 			</div>
 			<!-- Address Field -->
 			<div class="w-full">
@@ -88,7 +97,7 @@
 			<!-- Type Field -->
 			<div class="w-full">
 				<Label for="type" class="mb-2">Type</Label>
-				<Select class="mt-2" items={types} bind:value={selectedTypes} name="type" />
+				<Select class="mt-2" items={types} bind:value={selectedType}  name="type" />
 			</div>
 			<div class="w-full">
 				<Label for="category" class="mb-2">Category</Label>
