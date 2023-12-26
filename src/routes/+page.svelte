@@ -195,11 +195,11 @@
 <section class="services bg-accent ">
 	<div class="" data-aos="fade-up">
 		<div class="grid grid-cols-1 lg:grid-cols-2">
-			<div class="col-sapn-1 aspect-square lg:aspect-auto" style="background: url({aboutThumb}) center center no-repeat; background-size: cover;">
+			<div class="col-sapn-1 aspect-video lg:aspect-auto" style="background: url({aboutThumb}) center center no-repeat; background-size: cover;">
      
 		
 			</div>
-			<div class="col-sapn-1 px-5  lg:p-14 2xl:p-24 lg:py-16">
+			<div class="col-sapn-1 px-5  lg:p-14 2xl:p-24 py-16 lg:py-32">
         		<RichText multiLine bind:content={aboutUs2} />	
 				<a href="/about-us" class="myBtn myBtn2 mt-6">Learn More</a>		
 			</div>
