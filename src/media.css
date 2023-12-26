@@ -181,6 +181,10 @@
 
     padding-left: 26%;
   }
+    .heroSection.home  .heroText {
+
+    padding-left: 0 !important;
+  }
 }
 
 
