@@ -49,22 +49,31 @@ model Article {
 }
 
 model Property {
-  id            Int      @id @default(autoincrement())  
-  title         String
+  id             Int       @id @default(autoincrement())
+  title          String
   content        String?
-  address       String
-  city_state    String?
-  price         Float?
-  beds          Int?
-  baths         Int?
-  area          Int?
-  category      String?
-  type          String?
-  created_at    DateTime @default(now())
-  updated_at    DateTime?
-  featuredImage String?
-  media        Media[]  // Relation to assets
+  address        String
+  city_state     String?
+  price          Float?
+  beds           Int?
+  baths          Int?
+  area           Int?
+  category       String?
+  type           String?
+  cooling         String?
+  heating         String?
+  cooling_detail String?  
+  heating_detail String?  
+  garage         String?  
+  parking        String?  
+  view           String?  
+  pool           String?  
+  created_at     DateTime  @default(now())
+  updated_at     DateTime?
+  featuredImage  String?
+  media          Media[]   // Relation to assets
 }
+
 model Media {
   asset_id    Int      @id @default(autoincrement())
   mime_type   String

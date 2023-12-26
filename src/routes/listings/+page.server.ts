@@ -6,6 +6,11 @@ import type { PageServerLoad } from '../$types';
 const prisma = new PrismaClient();
 
 export const load: PageServerLoad = async (event) => {
+	const session = await event.locals.getSession();
+		if (!session) {
+			throw error(401, "Unauthorized");
+		}
+
 	let properties = await prisma.property.findMany({
 		
 	  });

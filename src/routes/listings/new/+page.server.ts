@@ -20,11 +20,31 @@ export const actions: Actions = {
       beds: parseInt(formData.get('beds').toString()),
       baths: parseInt(formData.get('baths').toString()),
       area: parseInt(formData.get('area').toString()),
-      
-      category:formData.get('category'),
-      type:formData.get('type'),
-    
+      category: formData.get('category'), // Use getAll to get all selected categories
+      type: formData.get('type'),
+      cooling :formData.get('cooling'),
+      heating :formData.get('heating'),
     };
+    
+    // Check if "Cooling" checkbox is checked and add it to the propertyData
+    if (formData.has('cooling') && formData.get('cooling') === 'Yes') {
+      propertyData.cooling_detail = formData.get('cooling_detail');
+    }
+    
+    // Check if "Heating" checkbox is checked and add it to the propertyData
+    if (formData.has('heating') && formData.get('heating') === 'Yes') {
+      propertyData.heating_detail = formData.get('heating_detail');
+    }
+    
+    // Checkboxes for extra details (Garage, Parking, View, Pool)
+    const extraDetails = ['garage', 'parking', 'view', 'pool'];
+    extraDetails.forEach((detail) => {
+      if (formData.has(detail) && formData.get(detail) === 'Yes') {
+        propertyData[detail] = 'Yes';
+      } else {
+        propertyData[detail] = 'No';
+      }
+    });
  
 
 
@@ -50,7 +70,7 @@ export const actions: Actions = {
         const fileType = file.type;
         const imageUrl = await uploadToSupabase(file);
         await prisma.media.create({
-          data: {           
+          data: {                       
             mime_type: fileType ,
             size:fileSize,     
             propertyId: newProperty.id,
@@ -59,7 +79,7 @@ export const actions: Actions = {
         });   
       }
  
-       throw redirect(303, `/${newProperty.id}`);
+       throw redirect(303, `/listings/${newProperty.id}`);
        return { success: true };
 
   
