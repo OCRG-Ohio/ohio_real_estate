@@ -115,7 +115,7 @@ gsap.registerPlugin(ScrollTrigger);
           Contact 
         </a>
       {/if}
-          <NavHamburger />
+          <NavHamburger class="myBurger"/>
         </div>
       
         <NavUl {activeUrl} {activeClass} {nonActiveClass} class="order-1 navigation">

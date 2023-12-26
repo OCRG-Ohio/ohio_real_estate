@@ -935,3 +935,10 @@ footer {
 .propertiesSingle .propertyDetailInfo .propertyFeatures .exteriorFeatures{margin-top: 20px;}
 .propertyDetailInfo dt p, .propertiesSingle .propertyDetailInfo dd p{margin: 0;}
 
+.whiteNav .myBurger{
+color:#ffffff;
+}
+.navsmaller .myBurger{
+  color:var(--myBlue);
+
+}
