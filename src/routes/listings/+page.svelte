@@ -86,7 +86,7 @@
 			<Button on:click={() => goto('/listings/new')}>
 				<PlusSolid class="h-3.5 w-3.5 mr-2" />Add New
 			  </Button>
-		  <Button color='alternative'>Actions<ChevronDownSolid class="w-3 h-3 ml-2 " /></Button>
+		  <!-- <Button color='alternative'>Actions<ChevronDownSolid class="w-3 h-3 ml-2 " /></Button>
 			<Dropdown class="w-44 divide-y divide-gray-100">
 			  <DropdownItem>Mass Edit</DropdownItem>
 			  <DropdownItem>Delete all</DropdownItem>
@@ -101,7 +101,7 @@
 				<Checkbox>For Lease</Checkbox>
 			  </li>	 
 		
-			</Dropdown>
+			</Dropdown> -->
 		</div>
 		  <TableHead>
 			<TableHeadCell padding="px-4 py-3" scope="col">Listing Title</TableHeadCell>

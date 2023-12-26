@@ -48,7 +48,38 @@ p{
   position: fixed;
   width:100%;
 }
-
+.myBtn {
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+  padding: 8px 26px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.myBtn:before {
+  content: '';
+  position: absolute;
+  border: 2px solid #fff;
+  bottom: -5px;
+  content: "";
+  left: -5px;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  transition: all .3s ease-in-out;
+}
+.myBtn:hover:before{
+inset:0;
+}
+.myBtn.myBtn2{
+  color:#ffffff;
+  background:var(--myBlue);
+}
+.myBtn.myBtn2:before{ 
+  border:2px solid var(--myBlue);
+}
 /* New Button */
 .tBtn2 {
 	color: #ffffff;
@@ -152,7 +183,7 @@ p{
 .btnPrimary:hover span:after{width:0;}
 a{color:initial; text-decoration:none;}
 a:hover{text-decoration:none;}
-h1,h2,h3{font-family:var(--font-heading);line-height: 1.3;}
+h1,h2,h3{font-family:var(--font-heading);line-height: 1.2;}
 
 .small-title {
 	font-weight: 400;
@@ -275,8 +306,9 @@ footer .logo *{color:#ffffff;}
   color: #000000;
   
 }
-.navsmaller .tBtn2{color:var(--myBlue); border:1px solid var(--myBlue);}
-.navsmaller .tBtn2:hover{color:#ffffff;}
+.navsmaller .myBtn{color:#ffffff;background:var(--myBlue); }
+.navsmaller .myBtn:before{border:2px solid var(--myBlue); }
+
 /*------- About Us---------*/
 .aboutUs{position:relative;    z-index: 3;}
 .aboutUs:after {
@@ -653,8 +685,18 @@ transition:all 0.8s;
   inset: 0;
   width: 0;
   height: 100%;
-  background: #f1f1f1;
+  background: #ffffff;
   opacity: 1;
+  z-index: -1;
+}
+.heroSection.home:after {
+  position: absolute;
+  content: '';
+  inset: 0;
+  width: 0;
+  height: 100%;
+  background: #000000;
+  opacity: 0.4;
   z-index: -1;
 }
 

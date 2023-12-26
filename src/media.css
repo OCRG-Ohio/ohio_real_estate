@@ -111,7 +111,7 @@
 
   }
   .heroSection.home::after {
-    width: 45%;
+    width: 100%;
   }
 
   .heroSection .heroThumb{width:12rem; bottom:-4rem; left:5rem;}

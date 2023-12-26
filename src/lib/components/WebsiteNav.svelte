@@ -6,9 +6,9 @@
   import { isEditing, currentUser } from '$lib/stores.js';
   import { page } from '$app/stores';
   $: activeUrl = $page.url.pathname;
-  $: whiteNav = (activeUrl === '/valuation' )
-                        ? 'whiteNav' 
-                        : '';
+  $: whiteNav = (activeUrl === '/valuation' || activeUrl === '/' )
+  ? 'whiteNav' 
+  : '';
   let activeClass = ' font-normal';
   let nonActiveClass = 'text-gray-800 hover:text-primar-700 font-normal';
 import siteLogo from "$lib/img/delusso.png"
@@ -111,7 +111,7 @@ gsap.registerPlugin(ScrollTrigger);
           </form>
         </Dropdown>
       {:else}
-        <a href="/contact" class="tBtn2 tBtn2Alt  ">
+        <a href="/contact" class="myBtn  ">
           Contact 
         </a>
       {/if}

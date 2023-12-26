@@ -22,6 +22,7 @@
 	import box2 from "$lib/img/homesearch.webp";
 	import box3 from "$lib/img/moderninterior2.webp";
 	import homeCta from "$lib/img/home-cta.webp";
+	import newbanner from "$lib/img/OhioConciegre.jpg";
 	import rendering from "$lib/img/building-vector.svg";
 	import ohio_2 from "$lib/img/ohioCity_2.webp";
 	import aboutThumb from "$lib/img/aboutUs.webp";
@@ -47,16 +48,7 @@
 		$currentUser = data.currentUser;
 		title = data.page?.title || "We do it smart,";
 		aboutUs = data.page?.aboutUs || "Lorem Ipsum";
-		aboutUs2 = data.page?.aboutUs2 || "Lorem Ipsum2";
-		serviceBox1 =
-			data.page?.serviceBox1 ||
-			"<h2 >Property Search</h2><p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>";
-		serviceBox2 =
-			data.page?.serviceBox2 ||
-			"<h2 >Property Valuation</h2><p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>";
-		serviceBox3 =
-			data.page?.serviceBox3 ||
-			"<h2 >Concerage Services</h2><p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>";
+		aboutUs2 = data.page?.aboutUs2 || "Lorem Ipsum2";	
 		$isEditing = false;
 	}
 
@@ -79,9 +71,7 @@
 						title,
 						aboutUs,
 						aboutUs2,
-						serviceBox1,
-						serviceBox2,
-						serviceBox3
+					
 					}
 				});
 			}
@@ -147,23 +137,25 @@
 	<LoginMenu />
 </WebsiteHeader>
 
-<div class="container mx-auto block md:hidden mt-20">
+<!-- <div class="container mx-auto block md:hidden mt-20">
 	<h1>
 		<PlainText bind:content={title} />
+
 	</h1>
-</div>
+	<a href="/properties" class="tBtn2 tBtn2Alt mt-6">Property Search</a>
+</div> -->
 <div
 	class="container-fluid heroSection home p-0 flex h-screen items-center justify-center bgNormal"
-	style="background: url({ohio_2}) top center no-repeat; background-size: cover;background-attachment: fixed;">
-	<div class=" grid-cols-12 self-stretch md:grid hidden">
+	style="background: url({newbanner}) center center no-repeat; background-size: cover;background-attachment: fixed;">
+	
 		<div
-			class="heroText col-span-12 md:col-span-6 xl:col-span-5 flex flex-col justify-center items-start md:bg-white md:pl-12 xl:pl-20">
-			<h1 class="md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl xl:mr-16 text-primary-700">
+			class="heroText text-center">
+			<h1 class="md:max-w-lg lg:max-w-2xl 2xl:max-w-3xl text-center text-white">
 				<PlainText bind:content={title} />
 			</h1>
-			<a href="/properties" class="tBtn2 tBtn2Alt mt-6">Property Search</a>
+			<a href="/properties" class="myBtn mt-6">Property Search</a>
 		</div>
-	</div>
+	
 </div>
 
 <section class="services py-12 md:py-16 lg:py-20 2xl:py-24">
@@ -174,7 +166,7 @@
 					<img src={box1} alt="" />
 				</div>
 				<div class="absText">
-					<RichText multiLine bind:content={serviceBox1} />
+					<h2>Prperty Valuation</h2>
 				</div>
 			</a>
 			<a href="valuation" class="serviceBoxContent">
@@ -182,7 +174,8 @@
 					<img src={box2} alt="" />
 				</div>
 				<div class="absText">
-					<RichText multiLine bind:content={serviceBox2} />
+					<h2>Prperty Search</h2>
+
 				</div>
 			</a>
 			<a href="concierge" class="serviceBoxContent">
@@ -190,70 +183,25 @@
 					<img src={box3} alt="" />
 				</div>
 				<div class="absText">
-					<RichText multiLine bind:content={serviceBox3} />
+					<h2>Concierge Services</h2>
+
 				</div>
 			</a>
 		</div>
 	</div>
 </section>
 
-<!-- <div
-	class="container-fluid aboutUs"
-	style="background: url({rendering}) top right no-repeat; background-size: contain;">
-	<div class="container mx-auto grid grid-cols-3 py-10 md:py-20 lg:py-28 2xl:py-32">
-		<div class="aboutText col-span-3 md:col-span-2">
-			<h2 class="small-title">We do it smart</h2>
-			<RichText multiLine bind:content={aboutUs} />
-			<a href="/about" class="tBtn2 tBtn2Alt mt-6 md:mt-8">Learn More</a>
-		</div>
-	</div>
-</div> -->
-<section class="services bg-accent">
+
+<section class="services bg-accent ">
 	<div class="" data-aos="fade-up">
 		<div class="grid grid-cols-1 lg:grid-cols-2">
 			<div class="col-sapn-1 aspect-square lg:aspect-auto" style="background: url({aboutThumb}) center center no-repeat; background-size: cover;">
      
 		
 			</div>
-			<div class="col-sapn-1 px-5 py-12 lg:p-14 2xl:p-24 ">
-        		<RichText multiLine bind:content={aboutUs2} />
-				<ul class="max-w-md space-y-1 md:space-y-2 text-gray-800 list-inside mt-10">
-					<li class="flex items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-							><path
-								fill="currentColor"
-								d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75" /></svg>
-						New Construction
-					</li>
-					<li class="flex items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-							><path
-								fill="currentColor"
-								d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75" /></svg>
-						Remodeling & Renovation
-					</li>
-					<li class="flex items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-							><path
-								fill="currentColor"
-								d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75" /></svg>
-						Design Services
-					</li>
-					<li class="flex items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-							><path
-								fill="currentColor"
-								d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75" /></svg>
-						Project Management
-					</li>
-					<li class="flex items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-							><path
-								fill="currentColor"
-								d="M4.5 12.75a.75.75 0 0 1 .75-.75h13.5a.75.75 0 0 1 0 1.5H5.25a.75.75 0 0 1-.75-.75" /></svg>
-						No Hassle Payment Process
-					</li>
-				</ul>
+			<div class="col-sapn-1 px-5  lg:p-14 2xl:p-24 lg:py-16">
+        		<RichText multiLine bind:content={aboutUs2} />	
+				<a href="/about-us" class="myBtn myBtn2 mt-6">Learn More</a>		
 			</div>
 		</div>
 	</div>
@@ -359,7 +307,10 @@
 					</div>
 				</swiper-slide>
 			</swiper-container>
-			<a href="/properties" class="tBtn2 tBtn2Alt mt-6">View All</a>
+			<div class="text-center">
+				<a href="/properties" class="myBtn myBtn2 mt-6 px-8">View All Properties</a>
+			</div>
+			
 		</div>
 	</div>
 </NotEditable>
