@@ -61,6 +61,23 @@
 .serviceBoxContent h2 {
   font-size: 18px;
 }
+.whiteNav  .nonActiveClass {
+  color:var(--myBlue);
+}
+.navsmaller .myBtn{color:#ffffff;background:var(--myBlue); }
+.navsmaller .myBtn:before{border:2px solid var(--myBlue); }
+.whiteNav  .nonActiveClass {
+  color:#ffffff;
+}
+.whiteNav  .nonActiveClass {
+  color:#ffffff;
+}
+.navsmaller  .nonActiveClass {
+  color:var(--myBlue) !important;
+}
+.mainNav .myBtn{
+  display:inline-block;
+}
 }
 /* Large Devices (lg) - 1024px and up */
 

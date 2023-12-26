@@ -90,7 +90,7 @@ gsap.registerPlugin(ScrollTrigger);
 
     <NotEditable>
 
-      <Navbar  class="fixed z-20  mainNav bg-transparent shadow {whiteNav}" >
+      <Navbar  class="fixed z-20   mainNav bg-transparent shadow {whiteNav}" >
         <NavBrand href="/">
           <!-- <img src={siteLogo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
           <span class="logo self-center whitespace-nowrap text-xl font-medium">DI LUSSO</span>
@@ -111,7 +111,7 @@ gsap.registerPlugin(ScrollTrigger);
           </form>
         </Dropdown>
       {:else}
-        <a href="/contact" class="myBtn  ">
+        <a href="/contact" class="myBtn none lg:block  ">
           Contact 
         </a>
       {/if}
