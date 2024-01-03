@@ -39,7 +39,7 @@
           {/each}           
       
         </ul>
-        <span class="text-sm text-gray-300 sm:text-center ">© 2021-2024  <a href="#" class="text-gray-300 hover:underline ">DiLusso™</a>. All Rights Reserved.</span>
+        <span class="text-sm text-gray-300 sm:text-center ">© 2021-2024  <a href="#" class="text-gray-300 hover:underline ">OCRG & Di Lusso™</a>. All Rights Reserved.</span>
     </div>
   </footer>
 </NotEditable>

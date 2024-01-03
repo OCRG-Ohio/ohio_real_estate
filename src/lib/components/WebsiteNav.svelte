@@ -93,7 +93,7 @@ gsap.registerPlugin(ScrollTrigger);
       <Navbar  class="fixed z-20   mainNav bg-transparent shadow {whiteNav}" >
         <NavBrand href="/">
           <!-- <img src={siteLogo} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" /> -->
-          <span class="logo self-center whitespace-nowrap text-xl font-medium">DI LUSSO</span>
+          <span class="logo self-center whitespace-nowrap text-xl font-medium">OCRG</span>
         </NavBrand>
         <div class="flex md:order-2 flex-nowrap">
           {#if $currentUser}
